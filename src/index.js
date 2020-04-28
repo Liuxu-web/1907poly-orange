@@ -3,13 +3,13 @@
  * @创建者: 刘旭
  * @Date: 2020-04-27 20:51:45
  * @修改者: 刘旭
- * @LastEditTime: 2020-04-27 21:23:57
+ * @LastEditTime: 2020-04-28 13:15:38
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import "./method/axios/http";
 import "./index.css"; // 全局默认样式
 import App from "./App.jsx";
 

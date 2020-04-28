@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-27 21:16:23
  * @修改者: 刘旭
- * @LastEditTime: 2020-04-27 21:21:00
+ * @LastEditTime: 2020-04-28 13:13:57
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 const proxy = require("http-proxy-middleware");
@@ -13,7 +13,7 @@ module.exports = function (app) {
   app.use(
     "^/api",
     proxy.createProxyMiddleware({
-      target: "http://127.0.0.1:8080",
+      target: "https://api.juooo.com/home/index/getClassifyHome?",
       changeOrigin: true,
       pathRewrite: {
         "^/api": "",
