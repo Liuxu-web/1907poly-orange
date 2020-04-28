@@ -3,16 +3,23 @@
  * @创建者: 刘旭
  * @Date: 2020-04-27 21:28:14
  * @修改者: 刘旭
- * @LastEditTime: 2020-04-28 13:24:03
+ * @LastEditTime: 2020-04-28 16:09:21
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
-
+import { NavBar, Icon } from 'antd-mobile';
 class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>首页页面==</h1>
+        <NavBar
+          mode="dark"
+          leftContent="Back"
+          rightContent={[
+            <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
+            <Icon key="1" type="ellipsis" />,
+          ]}
+        >NavBar</NavBar>
       </React.Fragment>
     );
   }

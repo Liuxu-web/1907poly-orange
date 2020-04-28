@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "antd-mobile": "^2.3.1",
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -15,9 +16,9 @@
     "redux": "^4.0.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -36,6 +37,9 @@
     ]
   },
   "devDependencies": {
-    "http-proxy-middleware": "^1.0.3"
+    "babel-plugin-import": "^1.13.0",
+    "customize-cra": "^0.9.1",
+    "http-proxy-middleware": "^1.0.3",
+    "react-app-rewired": "^2.1.5"
   }
 }
