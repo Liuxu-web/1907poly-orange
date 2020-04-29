@@ -3,36 +3,47 @@
  * @创建者: 张莹
  * @Date: 2020-04-29 21:59:20
  * @修改者: 张莹
- * @LastEditTime: 2020-04-29 22:04:56
+ * @LastEditTime: 2020-04-29 22:19:09
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
 import React, { Component } from "react";
-import { Icon, Carousel, WingBlank } from 'antd-mobile';
-// import Swiper from 'swiper/dist/js/swiper.js' 
-// import 'swiper/dist/css/swiper.css'  
+import { Icon } from 'antd-mobile';//antd design mobile UI库
 
 import "./home.scss";
 import "../../assets/iconfont/iconfont.css";
+//Swiper 轮播图插件测试
+//引入此路径，才不会打包失败
+import Swiper from "swiper";
+//引入样式，还可以加上自己的样式
+import "../../../node_modules/swiper/css/swiper.min.css";
+import "../../assets/css/Home-swiper.css";
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
   }
-  state = {
-    data: ['1', '2', '3'],
-
-  }
   componentDidMount() {
-    // simulate img loading
-    setTimeout(() => {
-      this.setState({
-        data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-      });
-    }, 100);
+    //可以加上你需要的条件等，然后生成Swiper对象，
+    //一定要检查是不是每次都生成了Swiper对象，否则可能出现不滑动的情况和别的情况等
+    new Swiper(".swiper-container", {
+      loop: true, // 循环模式选项
+      // 开启自动轮播
+      autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      },
+      simulateTouch: false, //禁止鼠标模拟
+      // 如果需要分页器
+      pagination: {
+        el: ".swiper-pagination",
+      },
 
-
+      observer: true, //修改swiper自己或子元素时，自动初始化swiper
+      observeParents: true, //修改swiper的父元素时，自动初始化swiper
+    });
   }
   render() {
     return (
@@ -53,34 +64,20 @@ class Home extends Component {
             </div>
           </div>
           {/* 轮播图 */}
-          <div className="banner">
-            <WingBlank>
-              <Carousel
-                autoplay={false}
-                infinite
-                beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-                afterChange={index => console.log('slide to', index)}
-              >
-                {this.state.data.map(val => (
-                  <a
-                    key={val}
-                    href="#"
-                    style={{ display: 'inline-block' }}
-                  >
-                    <img
-                      src={val}
-                      alt=""
-                      style={{ width: '100%', verticalAlign: 'top' }}
-                      onLoad={() => {
-                        // fire window resize event to change height
-                        window.dispatchEvent(new Event('resize'));
-                        this.setState({ imgHeight: 'auto' });
-                      }}
-                    />
-                  </a>
-                ))}
-              </Carousel>
-            </WingBlank>
+          <div className="swiper-container banner">
+            <div className="swiper-wrapper">
+              <div className="swiper-slide">Slide 1</div>
+              <div className="swiper-slide">Slide 2</div>
+              <div className="swiper-slide">Slide 3</div>
+              <div className="swiper-slide">Slide 4</div>
+              <div className="swiper-slide">Slide 5</div>
+              <div className="swiper-slide">Slide 6</div>
+              <div className="swiper-slide">Slide 7</div>
+              <div className="swiper-slide">Slide 8</div>
+              <div className="swiper-slide">Slide 9</div>
+            </div>
+            {/* <!-- 如果需要分页器 --> */}
+            <div className="swiper-pagination"></div>
           </div>
           <div className="main">
             <div className="section">
@@ -156,16 +153,16 @@ class Home extends Component {
                 <h3>热门演出</h3> <span>全部<Icon type="right" className="icon-right" /></span>
               </div>
               <ul>
-                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
-                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
-                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
-                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
-                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
-                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
-                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
-                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
-                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
-                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt=""/><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
+                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" /><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
+                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" /><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
+                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" /><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
+                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" /><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
+                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" /><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
+                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" /><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
+                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" /><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
+                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" /><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
+                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" /><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
+                <li><img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" /><span>2020第七届城市戏剧节 《涂红》-石家庄站</span></li>
               </ul>
             </div>
             {/* 巡回演出 */}
@@ -174,7 +171,7 @@ class Home extends Component {
                 <h3>巡回演出</h3> <span>全部<Icon type="right" className="icon-right" /></span>
               </div>
               <div className="tour-warp-block">
-                <img src="https://image.juooo.com/group1/M00/04/3E/rAoKNV59rlWAUODrAABlWN_fCvM347.jpg" alt=""/>
+                <img src="https://image.juooo.com/group1/M00/04/3E/rAoKNV59rlWAUODrAABlWN_fCvM347.jpg" alt="" />
                 <div className="tour-content">
                   <span>2020.08.13 - 10.03</span>
                   <h5>聚橙制作 | 法语音乐剧《摇滚红与黑》</h5>
@@ -203,6 +200,8 @@ class Home extends Component {
       </React.Fragment>
     )
   }
+
+  
 }
 
 export default Home;

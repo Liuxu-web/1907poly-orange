@@ -1,3 +1,4 @@
+
 {
   "name": "poly-orange",
   "version": "0.1.0",
@@ -14,11 +15,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
-<<<<<<< HEAD
+    "redux-thunk": "^2.3.0",
     "swiper": "^5.3.8"
-=======
-    "redux-thunk": "^2.3.0"
->>>>>>> 832bdbfdaff70cfb393dbe2b9f6479ac20717339
   },
   "scripts": {
     "start": "react-app-rewired start",
