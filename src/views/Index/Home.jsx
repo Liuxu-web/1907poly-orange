@@ -1,11 +1,12 @@
 /*
- * @描述: 首页 (底部导航)
- * @创建者: 刘旭
- * @Date: 2020-04-27 21:28:14
- * @修改者: 刘旭
- * @LastEditTime: 2020-04-29 20:06:25
- * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+ * @描述: 
+ * @创建者: 张莹
+ * @Date: 2020-04-29 21:59:20
+ * @修改者: 张莹
+ * @LastEditTime: 2020-04-29 22:04:56
+ * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
+
 import React, { Component } from "react";
 import { Icon, Carousel, WingBlank } from 'antd-mobile';
 // import Swiper from 'swiper/dist/js/swiper.js' 
@@ -199,14 +200,8 @@ class Home extends Component {
             </div>
           </div>
         </div>
-
       </React.Fragment>
-    );
-  }
-
-  async componentDidMount() {
-    const data = await this.$get("/api", { city_id: 0, version: "6.1.1", referer: 2 });
-    console.log(data);
+    )
   }
 }
 
