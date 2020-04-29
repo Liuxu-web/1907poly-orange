@@ -3,30 +3,19 @@
  * @创建者: 刘旭
  * @Date: 2020-04-27 21:28:14
  * @修改者: 刘旭
- * @LastEditTime: 2020-04-28 16:09:21
+ * @LastEditTime: 2020-04-29 20:11:05
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
-import { NavBar, Icon } from 'antd-mobile';
+// import { NavBar, Icon } from "antd-mobile";  antd design mobile UI库
+
 class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar
-          mode="dark"
-          leftContent="Back"
-          rightContent={[
-            <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
-            <Icon key="1" type="ellipsis" />,
-          ]}
-        >NavBar</NavBar>
+        <h1>首页</h1>
       </React.Fragment>
     );
-  }
-
-  async componentDidMount() {
-    const data = await this.$get("/api", { city_id: 0, version: "6.1.1", referer: 2 });
-    console.log(data);
   }
 }
 
