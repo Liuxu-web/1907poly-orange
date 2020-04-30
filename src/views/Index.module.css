@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 20:13:57
  * @修改者: 刘旭
- * @LastEditTime: 2020-04-29 21:31:46
+ * @LastEditTime: 2020-04-30 22:00:58
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -14,7 +14,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
+  background: white;
   position: absolute;
   bottom: 0;
 }

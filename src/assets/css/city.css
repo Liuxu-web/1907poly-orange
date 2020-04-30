@@ -1,0 +1,114 @@
+/* 顶部 */
+.city_header {
+  height: 0.3625rem;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #eeeeee;
+  text-align: center;
+  line-height: 0.3625rem;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.city_header button {
+  position: absolute;
+  left: 0;
+  padding: 0.0417rem;
+  font-size: 0.1833rem;
+  background: transparent;
+}
+/* 城市内容 */
+.city_content_box {
+  width: auto;
+  background: #f5f5f5;
+  position: relative;
+  /* 定位城市 */
+  /* 热门城市 */
+}
+.city_content_box .aside {
+  position: fixed;
+  right: 0.0833rem;
+  top: 1.0125rem;
+  width: 0.2292rem;
+  text-align: center;
+}
+.city_content_box .aside > span {
+  font-size: 0.0375rem;
+  cursor: pointer;
+}
+.city_content_box .aside > p {
+  font-size: 0.0375rem;
+  padding: 0.0208rem 0;
+  cursor: pointer;
+}
+.city_content_box .city_content_top {
+  margin-left: 0.1333rem;
+  height: 0.6792rem;
+  width: 2.6667rem;
+  display: flex;
+  font-size: 0.1rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.city_content_box .city_content_top > h1 {
+  margin-bottom: 0.0958rem;
+}
+.city_content_box .city_content_top > button {
+  box-sizing: border-box;
+  background: white;
+  border: 1px solid #ebebeb;
+  border-radius: 0.0417rem;
+  padding: 0 0.0667rem;
+  height: 0.3rem;
+}
+.city_content_box .city_content_middle {
+  width: 2.6667rem;
+  margin-left: 0.1333rem;
+  font-size: 0.1rem;
+}
+.city_content_box .city_content_middle > h1 {
+  height: 0.3708rem;
+  line-height: 0.3708rem;
+}
+.city_content_box .city_content_middle > .city_list_top {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.0625rem;
+  grid-auto-rows: 0.3083rem;
+}
+@media (min-width: 414px) {
+  .city_content_box .city_content_middle > .city_list_top {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.city_content_box .city_content_middle > .city_list_top > button {
+  background: white;
+  border: 1px solid #ebebeb;
+  border-radius: 0.0417rem;
+}
+.city_content_box .city_content_bottom {
+  padding-top: 0.0417rem;
+  width: 100%;
+  font-size: 0.1rem;
+}
+.city_content_box .city_content_bottom > h1 {
+  font-size: 0.0875rem;
+  color: #aaaaaa;
+  height: 0.2417rem;
+  line-height: 0.2417rem;
+  margin-left: 0.1333rem;
+}
+.city_content_box .city_content_bottom > ul {
+  width: 100%;
+  background: white;
+}
+.city_content_box .city_content_bottom > ul li {
+  margin: 0 auto;
+  height: 0.4167rem;
+  width: 2.6417rem;
+  line-height: 0.4167rem;
+  border-bottom: 1px solid #eaeaea;
+  cursor: pointer;
+}
