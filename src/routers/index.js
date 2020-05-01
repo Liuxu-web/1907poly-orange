@@ -5,7 +5,7 @@ import City_component from "../components/Home/City_component";
 import Calendar_component from "../components/Home/Calendar_component";
 
 import Home from "../views/Index/Home";
-import Theater from "../views/Index/Theater";
+import Theater from "../views/Index/Theater/Theater";
 import TicketFolder from "../views/Index/TicketFolder";
 import My from "../views/Index/My";
 
