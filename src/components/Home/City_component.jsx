@@ -3,12 +3,12 @@
  * @创建者: 刘旭
  * @Date: 2020-04-30 19:05:12
  * @修改者: 刘旭
- * @LastEditTime: 2020-04-30 22:08:33
+ * @LastEditTime: 2020-05-01 13:03:25
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
 
-import "../../assets/css/city.css";
+import "./city.css";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
