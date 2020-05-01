@@ -7,7 +7,7 @@
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
-import CityComponent from "../components/Home/City_component.jsx";
+import CityComponent from "../components/Home/City_component/City_component";
 
 class City extends Component {
   render() {

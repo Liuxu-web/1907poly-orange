@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-30 19:05:12
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-01 16:27:36
+ * @LastEditTime: 2020-05-01 20:57:31
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
@@ -12,7 +12,7 @@ import "./city.css";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import cityCreator from "../../store/actionsCreator/City-actionCreator";
+import cityCreator from "../../../store/actionsCreator/City-actionCreator";
 
 class City_component extends Component {
   render() {
@@ -98,7 +98,6 @@ class City_component extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
     // 获取城市列表
     this.props.CHANGE_CITY_LIST.apply(this);
     // 获取字母排序城市列表
