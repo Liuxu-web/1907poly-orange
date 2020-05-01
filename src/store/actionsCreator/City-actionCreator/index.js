@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-30 19:42:19
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-01 16:16:23
+ * @LastEditTime: 2020-05-01 20:56:13
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import { HOT_CITY_LIST, CITY_DATA } from "../../actionType/City-actionType";
@@ -36,7 +36,6 @@ export default {
       const url = `https://api.juooo.com/city/city/getSortedCityList?version=6.1.1&referer=2`;
       const { data } = await this.$get(url);
       dispatch(getCityData(data));
-      console.log(this.props);
     };
   },
 };

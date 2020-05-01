@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-05-01 13:26:57
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-01 19:35:59
+ * @LastEditTime: 2020-05-01 21:03:03
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
@@ -11,7 +11,8 @@ import "./calendar.css";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import calendarCreator from "../../store/actionsCreator/Calendar-actionCreator";
+import calendarCreator from "../../../store/actionsCreator/Calendar-actionCreator";
+
 class CalendarComponent extends Component {
   constructor(props) {
     super(props);
@@ -127,7 +128,6 @@ class CalendarComponent extends Component {
   }
 
   componentDidMount() {
-    console.log(this.Month);
     this.props.CHANGE_CALENDAR_TAB.apply(this);
     this.props.CHANGE_CALENDAR_DAY.apply(this, [this.Month]);
   }

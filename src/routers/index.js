@@ -1,8 +1,8 @@
 import Login from "../views/Login";
 import Error from "../views/Error";
 import Index from "../views/Index";
-import City_component from "../components/Home/City_component";
-import Calendar_component from "../components/Home/Calendar_component";
+import City_component from "../components/Home/City_component/City_component";
+import Calendar_component from "../components/Home/Calendar_component/Calendar_component";
 
 import Home from "../views/Index/Home";
 import Theater from "../views/Index/Theater/Theater";
@@ -16,7 +16,7 @@ import Feedback from "../views/my/Feedback"
  * @创建者: 刘旭
  * @Date: 2020-04-27 21:45:14
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-01 16:41:03
+ * @LastEditTime: 2020-05-01 21:05:34
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 // 导出路由配置信息
