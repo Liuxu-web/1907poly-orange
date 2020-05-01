@@ -1,0 +1,151 @@
+.calendar-box {
+  width: 100%;
+  height: 100%;
+  background: #f9f9f9;
+  /* 横向滑动列表 */
+  /* 年月 */
+  /* 星期 */
+  /* 日期 */
+}
+.calendar-box .calendar-header {
+  width: auto;
+  height: 0.3625rem;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+.calendar-box .calendar-header > button {
+  font-size: 0.1583rem;
+  padding: 0.0626rem;
+  background: transparent;
+}
+.calendar-box .calendar-header > h1 {
+  font-size: 0.1583rem;
+}
+.calendar-box .calendar-tab {
+  height: 0.4458rem;
+  width: auto;
+  padding: 0 0.1042rem;
+  border-top: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+}
+.calendar-box .calendar-tab > ul {
+  width: 2.375rem;
+  height: 0.1875rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-right: 1px solid #ebebeb;
+}
+.calendar-box .calendar-tab > ul li {
+  display: inline-block;
+  height: 100%;
+  font-size: 0.125rem;
+  padding-right: 0.2208rem;
+}
+.calendar-box .calendar-tab > ul li > a {
+  line-height: 0.1667rem;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.calendar-box .calendar-tab > ul li > a.active {
+  box-sizing: border-box;
+  color: #fd6945;
+  border-bottom: 2px solid #fd6945;
+}
+.calendar-box .calendar-tab ul::-webkit-scrollbar {
+  display: none;
+}
+.calendar-box .calendar-tab ul {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+}
+.calendar-box .calendar-tab > div {
+  line-height: 0.1584rem;
+  text-align: end;
+  font-size: 0.125rem;
+  height: 0.1875rem;
+  flex: 1;
+}
+.calendar-box .calendar-years {
+  width: auto;
+  padding: 0 0.25rem;
+  height: 0.3542rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+.calendar-box .calendar-years > button {
+  font-size: 0.1583rem;
+  background: transparent;
+}
+.calendar-box .calendar-week-box {
+  width: 100%;
+  height: 0.3042rem;
+  background: #f9f9f9;
+}
+.calendar-box .calendar-week-box .calendar-week {
+  margin: 0 auto;
+  width: 2.625rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.calendar-box .calendar-week-box .calendar-week :last-child {
+  color: #fd6945;
+}
+.calendar-box .calendar-week-box .calendar-week :first-child {
+  color: #fd6945;
+}
+.calendar-box .calendar-week-date-box {
+  background: white;
+  box-shadow: 10px 10px 10px #f1f1f2;
+}
+.calendar-box .calendar-week-date-box .calendar-week-date {
+  width: 2.625rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 0.4583rem;
+}
+.calendar-box .calendar-week-date-box .calendar-week-date > .date {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+.calendar-box .calendar-week-date-box .calendar-week-date > .date > p {
+  color: #c1c1c1;
+  justify-self: center;
+  align-self: center;
+}
+.calendar-box .calendar-week-date-box .calendar-week-date > .date > p.active {
+  color: #242424;
+}
+.calendar-box .calendar-week-date-box .calendar-week-date > .dataAvtice {
+  display: grid;
+  color: #fd6945;
+  grid-template-rows: repeat(2, 1fr);
+}
+.calendar-box .calendar-week-date-box .calendar-week-date > .dataAvtice > p {
+  padding: 0.0417rem 0.0667rem;
+  justify-self: center;
+  align-self: center;
+  border-radius: 50%;
+  background: #fedac8;
+}
+.calendar-box .calendar-week-date-box .calendar-week-date > .dataAvtice > span {
+  justify-self: center;
+  align-self: center;
+  font-size: 0.0417rem;
+}
+.calendar-box > h2 {
+  text-align: center;
+  padding-top: 0.2875rem;
+  font-size: 0.0958rem;
+}

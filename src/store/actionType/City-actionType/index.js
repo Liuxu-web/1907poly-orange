@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-30 19:40:24
  * @修改者: 刘旭
- * @LastEditTime: 2020-04-30 19:48:16
+ * @LastEditTime: 2020-05-01 16:13:27
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 export const HOT_CITY_LIST = "HOT_CITY_LIST";

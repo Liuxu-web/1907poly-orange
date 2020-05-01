@@ -3,7 +3,7 @@
  * @创建者: 张莹
  * @Date: 2020-04-29 21:59:20
  * @修改者: 张莹
- * @LastEditTime: 2020-04-30 22:09:48
+ * @LastEditTime: 2020-05-01 13:20:55
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -64,7 +64,12 @@ class Home extends Component {
               <input type="text" placeholder="搜索热门演出" />
             </div>
             <div className="rili">
-              <i className="iconfont icon-rili icon-r"></i>
+              <i
+                onClick={() => {
+                  this.props.history.push("/calendar");
+                }}
+                className="iconfont icon-rili icon-r"
+              ></i>
             </div>
           </div>
           {/* 轮播图 */}

@@ -17,6 +17,9 @@
   font-size: 0.1833rem;
   background: transparent;
 }
+.city_header span {
+  font-size: 0.1583rem;
+}
 /* 城市内容 */
 .city_content_box {
   width: auto;

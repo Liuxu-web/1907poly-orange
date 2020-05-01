@@ -1,9 +1,9 @@
 /*
- * @描述:
+ * @描述: City-actionCreator 城市选择
  * @创建者: 刘旭
  * @Date: 2020-04-30 19:42:19
  * @修改者: 刘旭
- * @LastEditTime: 2020-04-30 20:48:11
+ * @LastEditTime: 2020-05-01 16:16:23
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import { HOT_CITY_LIST, CITY_DATA } from "../../actionType/City-actionType";
