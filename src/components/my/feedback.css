@@ -1,0 +1,164 @@
+#wrap {
+    width: 100%;
+    height: 100%;
+    background-color: #EFEFEF;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+#wrap .title {
+    width: 100%;
+    height: 0.3667rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-bottom: 0.0042rem solid #ebebeb;
+    background-color: #fff;
+    color: #232323;
+    line-height: 0.3667rem;
+}
+
+#wrap .title i {
+    display: inline-block;
+}
+
+#wrap .title .title_content {
+    display: inline-block;
+    text-align: center;
+    font-size: 0.15rem;
+}
+
+#wrap .title .title_expand {
+    display: inline-block;
+}
+
+#wrap .edit_content__text {
+    width: 100%;
+    height: 1.25rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.1667rem 0.125rem;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+#wrap .edit_content__text .edit_content__text_input {
+    width: 100%;
+    height: 100%;
+    font-size: 0.1333rem;
+    border: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: auto;
+    resize: none;
+}
+
+#wrap .edit_content__text .count_chart {
+    color: #999999;
+}
+
+#wrap .app_phone {
+    width: auto;
+    height: 0.5rem;
+    background-color: #fff;
+    margin-top: 0.1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#wrap .app_phone .phone_cord {
+    width: 0.4rem;
+    height: 0.175rem;
+    margin: 0 0.2125rem 0 0.125rem;
+    display: inline-block;
+    line-height: 0.175rem;
+    font-size: 0.1333rem;
+    color: #232323;
+}
+
+#wrap .app_phone .app_phone_input {
+    width: 1.875rem;
+    height: 0.2083rem;
+}
+
+#wrap .city_live {
+    width: auto;
+    height: 0.4583rem;
+    padding: 0 0.125rem;
+    background-color: #fff;
+    margin-top: 0.1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#wrap .city_live .city_live_title {
+    width: 0.5333rem;
+    height: 0.175rem;
+    font-size: 0.1333rem;
+    color: #232323;
+    font-weight: normal;
+    display: inline-block;
+}
+
+#wrap .city_live .city_live_choose {
+    display: inline-block;
+}
+
+#wrap .city_live .city_live_choose .city_live_choose_text {
+    font-size: 0.1167rem;
+    color: #ff6743;
+}
+
+#wrap .city_live .city_live_choose i {
+    margin-left: 0.0417rem;
+}
+
+#wrap .commit_button {
+    width: auto;
+    height: 0.3917rem;
+    padding: 0.2083rem 0.125rem 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#wrap .commit_button .commit_button_span {
+    width: auto;
+    height: 0.3917rem;
+    display: block;
+    background-color: #FF6743;
+    font-size: 0.1333rem;
+    line-height: 0.3917rem;
+    border-radius: 0.62667rem;
+    text-align: center;
+    color: white;
+}
+
+/*# sourceMappingURL=feedback.css.map */

@@ -1,0 +1,221 @@
+#app {
+    width: 100%;
+    height: 100%;
+    background-color: #F5F5F5;
+}
+
+#app .header {
+    width: auto;
+    height: 1.7458rem;
+    background: url(../../assets/img/my/personal_bg_1.f5fc96c.png) no-repeat top center;
+    background-size: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#app .header .header_icon {
+    width: 0.1667rem;
+    height: 0.1333rem;
+    margin-top: 0.0833rem;
+    margin-right: 0.0833rem;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+}
+
+#app .header .header_icon .icon {
+    width: 0.1333rem;
+    height: 0.1333rem;
+    display: block;
+    background: red;
+}
+
+#app .header .header_main {
+    width: 2.875rem;
+    height: 1.2875rem;
+    background-color: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-shadow: 0rem 0.1083rem 0.8rem 0.0542rem rgba(35, 35, 35, 0.08);
+    box-shadow: 0rem 0.1083rem 0.8rem 0.0542rem rgba(35, 35, 35, 0.08);
+    border-radius: 0.042rem;
+}
+
+#app .header .header_main .header_main_head {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 2.8417rem;
+    height: 0.425rem;
+    padding: 0 0.0625rem;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+}
+
+#app .header .header_main .header_main_head .user_logo {
+    width: 0.5rem;
+    height: 0.5rem;
+    display: inline-block;
+    margin-top: -0.1042rem;
+    margin-left: 0.0417rem;
+    margin-right: 0.0417rem;
+}
+
+#app .header .header_main .header_main_head .user_logo img {
+    display: block;
+    width: 0.4833rem;
+    height: 0.4833rem;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-top: -0.1042rem;
+    margin-left: 0.0417rem;
+    background: #ffffff;
+}
+
+#app .header .header_main .header_main_head .login_reg {
+    display: inline-block;
+    width: 0.5417rem;
+    height: 0.1667rem;
+}
+
+#app .header .header_main .header_main_head .login_reg .login {
+    width: 1.0417rem;
+    height: 0.1933rem;
+    font-size: 0.1333rem;
+    color: #232323;
+    font-weight: bold;
+}
+
+#app .header .header_main .header_main_head .login_reg .click_login {
+    width: 1.0417rem;
+    height: 0.1933rem;
+    color: #999;
+}
+
+#app .header .header_main .header_main_vip {
+    width: 2.875rem;
+    height: 0.2167rem;
+}
+
+#app .header .header_main .header_main_vip p {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 0.675rem;
+    height: 0.2167rem;
+    background: #F5F5F5;
+    color: #B3B3B3;
+    float: right;
+    border-radius: 0.125rem 0 0 0.125rem;
+    padding: 0.0417rem 0.0755rem 0.0417rem 0.125rem;
+}
+
+#app .header .header_main .header_main_cnt {
+    width: 2.875rem;
+    height: 0.675rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0.125rem 0 0.1625rem;
+    background-color: #fff;
+}
+
+#app .header .header_main .header_main_cnt .balance,
+#app .header .header_main .header_main_cnt .integral,
+#app .header .header_main .header_main_cnt .coupon,
+#app .header .header_main .header_main_cnt .openvip {
+    width: 0.7083rem;
+    height: 0.675rem;
+    text-align: center;
+}
+
+#app .header .header_main .header_main_cnt .balance :first-child,
+#app .header .header_main .header_main_cnt .integral :first-child,
+#app .header .header_main .header_main_cnt .coupon :first-child,
+#app .header .header_main .header_main_cnt .openvip :first-child {
+    height: 0.1917rem;
+    margin-bottom: 0.0313rem;
+    color: #232323;
+    font-size: 0.1333rem;
+    font-weight: 500;
+}
+
+#app .header .header_main .header_main_cnt .balance :last-child,
+#app .header .header_main .header_main_cnt .integral :last-child,
+#app .header .header_main .header_main_cnt .coupon :last-child,
+#app .header .header_main .header_main_cnt .openvip :last-child {
+    color: #666;
+}
+
+#app .header .header_main .header_main_cnt .separator {
+    width: 0.0042rem;
+    height: 0.25rem;
+    background: #ebebeb;
+}
+
+#app .membership {
+    width: 3.125rem;
+    height: 0.75rem;
+    display: block;
+}
+
+#app .membership img {
+    width: 100%;
+    height: 100%;
+}
+
+#app .mine_setting {
+    width: auto;
+    height: 1.575rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 0.125rem;
+}
+
+#app .mine_setting .mine_setting_list {
+    width: 2.875rem;
+    height: 0.7458rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #ffffff;
+    margin-bottom: 0.1rem;
+}
+
+#app .mine_setting .mine_setting_list .mine_setting_list_items {
+    width: 0.7167rem;
+    height: 0.7333rem;
+    padding: 0.1375rem 0 0.1667rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#app .mine_setting .mine_setting_list .mine_setting_list_items i {
+    display: inline-block;
+    width: 0.275rem;
+    height: 0.275rem;
+    background-color: brown;
+}
+
+#app .mine_setting .mine_setting_list .mine_setting_list_items .mine_setting_list_items_name {
+    color: #666;
+}
+
+/*# sourceMappingURL=my.css.map */
