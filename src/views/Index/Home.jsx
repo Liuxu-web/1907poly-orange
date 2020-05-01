@@ -3,7 +3,7 @@
  * @创建者: 张莹
  * @Date: 2020-04-29 21:59:20
  * @修改者: 张莹
- * @LastEditTime: 2020-05-01 21:07:56
+ * @LastEditTime: 2020-05-02 01:47:03
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -12,6 +12,8 @@ import { Icon } from "antd-mobile"; //antd design mobile UI库
 
 import "./home.scss";
 import "../../assets/iconfont/iconfont.css";
+// 发布与订阅
+import pubsub from "pubsub-js";
 //Swiper 轮播图插件测试
 //引入此路径，才不会打包失败
 import Swiper from "swiper";
@@ -299,8 +301,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    //可以加上你需要的条件等，然后生成Swiper对象，
-    //一定要检查是不是每次都生成了Swiper对象，否则可能出现不滑动的情况和别的情况等
+    // 发布者
+    pubsub.publish("home", "/");
     new Swiper(".swiper-container", {
       loop: true, // 循环模式选项
       // 开启自动轮播

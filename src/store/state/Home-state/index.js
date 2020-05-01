@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 19:01:41
  * @修改者: 刘旭
- * @LastEditTime: 2020-04-29 19:45:55
+ * @LastEditTime: 2020-05-02 01:31:52
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 export default {
@@ -13,6 +13,4 @@ export default {
   classify_list: [],
   // 顶部轮播图数据
   slide_list: [],
-  // 橙卡小图片
-  top_icon: [],
 };

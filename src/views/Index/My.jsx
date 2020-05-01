@@ -3,17 +3,15 @@
  * @创建者: 刘旭
  * @Date: 2020-04-27 22:00:39
  * @修改者: 徐华
- * @LastEditTime: 2020-04-27 22:01:0
+ * @LastEditTime: 2020-05-02 01:15:31
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑2
  */
 import React, { Component } from "react";
-
+// 发布与订阅
+import pubsub from "pubsub-js";
 // 引入mine.css,我的页面样式
 import "../../components/my/mine.css";
 export default class My extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <React.Fragment>
@@ -26,10 +24,7 @@ export default class My extends Component {
             <div className="header_main">
               <div className="header_main_head">
                 <div className="user_logo">
-                  <img
-                    src={"https://m.juooo.com/static/img/logo-user.8413cbf.png"}
-                    alt=""
-                  ></img>
+                  <img src={"https://m.juooo.com/static/img/logo-user.8413cbf.png"} alt=""></img>
                 </div>
                 <div className="login_reg">
                   <p className="login">登录/注册</p>
@@ -64,11 +59,8 @@ export default class My extends Component {
               </div>
             </div>
           </header>
-          <a href="" className="membership">
-            <img
-              src={"https://m.juooo.com/static/img/ad.411f5e6.png"}
-              alt=""
-            ></img>
+          <a href="/#" className="membership">
+            <img src={"https://m.juooo.com/static/img/ad.411f5e6.png"} alt=""></img>
           </a>
           <div className="mine_setting">
             <ul className="mine_setting_list">
@@ -114,6 +106,8 @@ export default class My extends Component {
     );
   }
   componentDidMount() {
+    // 发布者
+    pubsub.publish("my", "/my");
     console.log(this.props);
   }
 }

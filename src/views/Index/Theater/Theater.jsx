@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+// 发布与订阅
+import pubsub from "pubsub-js";
+
 import axios from "axios";
 import { TheStyle } from "./theaterStyle";
 import Swiper from "swiper";
@@ -79,27 +82,29 @@ class theater extends Component {
     );
   }
 
-  // componentDidMount() {
-  //   axios("/api/theatre/index/getTheatreList", {
-  //     params: {
-  //       page: 1,
-  //       version: "6.1.1",
-  //       referer: 1,
-  //     },
-  //   }).then((res) => {
-  //     console.log(res.data.data.theatre_list);
+  componentDidMount() {
+    // 发布者
+    pubsub.publish("theater", "/theater");
+    // axios("/api/theatre/index/getTheatreList", {
+    //   params: {
+    //     page: 1,
+    //     version: "6.1.1",
+    //     referer: 1,
+    //   },
+    // }).then((res) => {
+    //   console.log(res.data.data.theatre_list);
 
-  //     this.setState({ theatreList: res.data.data.theatre_list });
-  //     var swiper = new Swiper(".swiper-container", {
-  //       slidesPerView: "auto",
-  //       spaceBetween: 0,
-  //       pagination: {
-  //         el: ".swiper-pagination",
-  //         clickable: true,
-  //       },
-  //     });
-  //   });
-  // }
+    //   this.setState({ theatreList: res.data.data.theatre_list });
+    //   var swiper = new Swiper(".swiper-container", {
+    //     slidesPerView: "auto",
+    //     spaceBetween: 0,
+    //     pagination: {
+    //       el: ".swiper-pagination",
+    //       clickable: true,
+    //     },
+    //   });
+    // });
+  }
 }
 
 export default theater;
