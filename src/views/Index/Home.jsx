@@ -3,7 +3,7 @@
  * @创建者: 张莹
  * @Date: 2020-04-29 21:59:20
  * @修改者: 张莹
- * @LastEditTime: 2020-05-01 13:20:55
+ * @LastEditTime: 2020-05-01 20:21:44
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -20,30 +20,6 @@ import "../../../node_modules/swiper/css/swiper.min.css";
 import "../../assets/css/Home-swiper.css";
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
-  componentDidMount() {
-    //可以加上你需要的条件等，然后生成Swiper对象，
-    //一定要检查是不是每次都生成了Swiper对象，否则可能出现不滑动的情况和别的情况等
-    new Swiper(".swiper-container", {
-      loop: true, // 循环模式选项
-      // 开启自动轮播
-      autoplay: {
-        delay: 3000,
-        stopOnLastSlide: false,
-        disableOnInteraction: false,
-      },
-      simulateTouch: false, //禁止鼠标模拟
-      // 如果需要分页器
-      pagination: {
-        el: ".swiper-pagination",
-      },
-
-      observer: true, //修改swiper自己或子元素时，自动初始化swiper
-      observeParents: true, //修改swiper的父元素时，自动初始化swiper
-    });
-  }
   render() {
     return (
       <React.Fragment>
@@ -320,6 +296,28 @@ class Home extends Component {
         </div>
       </React.Fragment>
     );
+  }
+
+  componentDidMount() {
+    //可以加上你需要的条件等，然后生成Swiper对象，
+    //一定要检查是不是每次都生成了Swiper对象，否则可能出现不滑动的情况和别的情况等
+    new Swiper(".swiper-container", {
+      loop: true, // 循环模式选项
+      // 开启自动轮播
+      autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      },
+      simulateTouch: false, //禁止鼠标模拟
+      // 如果需要分页器
+      pagination: {
+        el: ".swiper-pagination",
+      },
+
+      observer: true, //修改swiper自己或子元素时，自动初始化swiper
+      observeParents: true, //修改swiper的父元素时，自动初始化swiper
+    });
   }
 }
 
