@@ -1,0 +1,104 @@
+.Header{
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	background-color: #FFFFFF;
+	position: sticky;
+	font-size: 18px;
+	top: 0;
+	z-index: 10;
+	border-bottom: 1px solid #EBEBEB;
+}
+.theater-box{
+	width: 80%;
+	height: 280px;
+	background-color: white;
+	margin: auto;
+	margin-top: 15px;
+	border-radius: 5px;
+	padding: 20px;
+	border: 1px solid #EBEBEB;
+}
+.theater-box-title{
+	width: 100%;
+	height: 54px;
+	background-color: #FFFFFF;
+	margin-bottom: 10px;
+	position: relative;
+}
+.theater-box-title-p1{
+	width: 70%;
+	font-size: 18px;
+	margin: 0;
+	float: left;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-left: 10px;
+	margin-top: 5px;
+	text-align: left;
+	font-weight: 800;
+}
+.theater-box-title-p2{
+	width: 70%;
+	float: left;
+	margin: 0;
+	text-align: left;
+	margin-left: 10px;
+	margin-top: 3px;
+}
+.theater-box-title-img{
+	width: 54px;
+	height: 54px;
+	float: left;
+	border-radius: 5px;
+}
+.theater-more-btn{
+	position: absolute;
+	right: 5px;
+	top: 42%;
+}
+.theater-more-btn>img{
+	width: 15px;
+	height: 15px;
+}
+.theater-box-list {
+	width: 100%;
+}
+.moveList {
+	white-space: nowrap;
+	overflow-x: auto;
+	margin: 0;
+	padding: 0;
+}
+
+.moveList .moveList-box {
+	display: inline-block;
+	width: 120px;
+	height: 220px;
+	margin-right: 5px;
+	text-align: center;
+	/* border: 1px solid #ddd; */
+	overflow: hidden;
+}
+.moveList-time{
+	position: relative;
+	width: 100%;
+	height: 30px;
+	border-bottom:2px solid #EBEBEB;
+}
+.moveList-time span{
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	background-color: #CCCCCC;
+	position: absolute;
+	bottom: -4px;
+	border-radius: 50%;
+}
+.moveList .moveList-img{
+	margin-top: 10px;
+	width: 100%;
+	height: 166px;
+}

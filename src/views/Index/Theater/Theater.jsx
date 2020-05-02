@@ -1,110 +1,66 @@
-import React, { Component } from "react";
-// 发布与订阅
-import pubsub from "pubsub-js";
-
-import axios from "axios";
-import { TheStyle } from "./theaterStyle";
-import Swiper from "swiper";
-import "../../../../node_modules/swiper/css/swiper.min.css";
-import "../../../assets/css/Home-swiper.css";
-
-// 这个看起来像是图片. 但是指定目录没有
-// let dian = require('../../../assets/img/dian.png')
-
-class theater extends Component {
-  constructor() {
-    // 这个记得放在上面
-    super();
-    this.state = {
-      theatreList: [],
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        {/* 因为样式的问题, 所以只能把你的写的页面注释了 */}
-        {/* <TheStyle>
-          <div className="head_nav">
-            <h3>剧院</h3>
-          </div>
-
-          <div className="theater-body">
-            <div className="theater-list">
-              <ul>
-                {this.state.theatreList.map((item, index) => {
-                  return (
-                    <li key={index}>
-                      <div className="theater-info-shows">
-                        <div className="theater-info">
-                          <a href="null" className="theater-pic-name-count">
-                            <img src={item.pic} alt="" />
-                            <div className="theater-name-count-wrap">
-                              <span>{item.name}</span>
-                              <p>{item.count}场在售演出</p>
-                            </div>
-                          </a>
-                          <a href="null" className="theater-link">
-                            <img alt="图片丢失" src={dian} />
-                          </a>
-                        </div>
-
-                        <div className="theater-shows">
-                          <div className="theater-show-wrap">
-                            <div className="swiper-container">
-                              <div className="swiper-wrapper">
-                                {item.show_list.map((item2, index) => {
-                                  return (
-                                    <div className="swiper-slide" key={index}>
-                                      <div className="theater-show-date">
-                                        <p>{item2.show_time}</p>
-                                        <span></span>
-                                      </div>
-                                      <a href="null">
-                                        <img src={item2.pic} alt="" />
-                                      </a>
-                                    </div>
-                                  );
-                                })}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
+import React, {Component} from 'react';
+import './theater.css'
+import {connect} from 'react-redux'
+import newsCreator from '../../../store/actionsCreator/theater/index.js'
+class Theater extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+	async componentDidMount(){
+		this.props.getList()
+	}
+    render() {
+        return (
+            <div>
+                <div className="Header">
+                	剧院
+                </div>
+				{
+					this.props.theatre_list.map((v,i)=>(
+						<div className={"theater-box"} key={v.id} >
+							<div className={"theater-box-title"}>
+								<img src={v.pic} className={"theater-box-title-img"}/>
+								<p className={"theater-box-title-p1"}>{v.name}</p>
+								<p className={"theater-box-title-p2"}>{v.count}场在售演出</p>
+								<div className="theater-more-btn">
+									<img src="https://m.juooo.com/static/img/more.2ce7873.png"/>
+								</div>
+							</div>
+							
+							<div className="theater-box-list">
+								<div className="moveList">	
+								{
+									v.showList.map(item=>(
+										<div className={"moveList-box"} key={item.id}>
+											<div className={"moveList-time"}>
+												<p>{item.show_time}</p>
+												<span></span>
+											</div>
+											<img className={"moveList-img"} src={item.pic}/>
+										</div>
+									))
+								}
+								</div>
+							</div>
+						</div>
+					))
+				}
             </div>
-          </div>
-        </TheStyle> */}
-      </div>
-    );
-  }
-
-  componentDidMount() {
-    // 发布者
-    pubsub.publish("theater", "/theater");
-    // axios("/api/theatre/index/getTheatreList", {
-    //   params: {
-    //     page: 1,
-    //     version: "6.1.1",
-    //     referer: 1,
-    //   },
-    // }).then((res) => {
-    //   console.log(res.data.data.theatre_list);
-
-    //   this.setState({ theatreList: res.data.data.theatre_list });
-    //   var swiper = new Swiper(".swiper-container", {
-    //     slidesPerView: "auto",
-    //     spaceBetween: 0,
-    //     pagination: {
-    //       el: ".swiper-pagination",
-    //       clickable: true,
-    //     },
-    //   });
-    // });
-  }
+        )
+    }
 }
-
-export default theater;
+function mapStateToProps(state){
+	// console.log(state)
+	return {
+		theatre_list:state.theater.theater_list
+	}
+}
+function mapDispatchToProps(dispatch){
+	return {
+		getList(){
+			dispatch(newsCreator.getTheaList())
+		}
+	}
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Theater);

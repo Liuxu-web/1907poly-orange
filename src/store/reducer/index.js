@@ -13,11 +13,13 @@ import homeList from "../reducer/Home-reducer"; // 首页数据
 import cityList from "../reducer/City-reducer"; // 城市定位
 
 import calendarLsit from "../reducer/Calendar-reducer"; // 演出日历
+import theater from './theater/index.js'  //影院数据
 
 const rootReducer = combineReducers({
   homeList,
   cityList,
   calendarLsit,
+  theater,
 });
 
 export default rootReducer;
