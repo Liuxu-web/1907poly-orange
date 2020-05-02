@@ -3,6 +3,7 @@ import Error from "../views/Error";
 import Index from "../views/Index";
 import City_component from "../components/Home/City_component/City_component";
 import Calendar_component from "../components/Home/Calendar_component/Calendar_component";
+import Search from "../views/Search";
 
 import Home from "../views/Index/Home";
 import Theater from "../views/Index/Theater/Theater";
@@ -10,18 +11,25 @@ import TicketFolder from "../views/Index/TicketFolder";
 import My from "../views/Index/My";
 
 // 我的-->意见反馈
-import Feedback from "../views/my/Feedback"
+import Feedback from "../views/my/Feedback";
+
 /*
  * @描述: 路由集中式管理 数据
  * @创建者: 刘旭
  * @Date: 2020-04-27 21:45:14
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-01 21:05:34
+ * @LastEditTime: 2020-05-02 13:51:50
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 // 导出路由配置信息
 export const routeList = (() => {
-  return [{
+  return [
+    {
+      // 搜索演出页面
+      path: "/search",
+      component: Search,
+    },
+    {
       // 演出日历
       path: "/calendar",
       component: Calendar_component,
@@ -44,13 +52,14 @@ export const routeList = (() => {
     {
       //我的-->意见反馈
       path: "/feedback/index",
-      component: Feedback
+      component: Feedback,
     },
     {
       // 首页
       path: "/",
       component: Index,
-      childrens: [{
+      childrens: [
+        {
           // 首页
           path: "/",
           exact: true,

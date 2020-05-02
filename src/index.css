@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-27 21:07:00
  * @修改者: 刘旭
- * @LastEditTime: 2020-04-29 21:32:36
+ * @LastEditTime: 2020-05-02 14:12:28
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 @charset "utf-8";
@@ -51,7 +51,8 @@ code,
 kbd,
 samp {
   line-height: 1.5;
-  font-family: tahoma, arial, "Hiragino Sans GB", simsun, sans-serif;
+  /* 这个字体太丑了 */
+  /* font-family: tahoma, arial, "Hiragino Sans GB", simsun, sans-serif; */
 }
 h1,
 h2,

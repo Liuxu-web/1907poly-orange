@@ -3,17 +3,27 @@
  * @创建者: 刘旭
  * @Date: 2020-04-27 21:59:26
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-02 01:47:17
+ * @LastEditTime: 2020-05-02 13:33:50
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
 // 发布与订阅
 import pubsub from "pubsub-js";
+import "./TicketFolder.css";
 class TicketFolder extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>票夹页面</h1>
+        <div className={"TF_header"}>
+          票夹
+          <i className={"iconfont icon-shenglvehao"}></i>
+        </div>
+        <div className={"TF_subject"}>
+          <div className={"TF_gologin"}>
+            <p>暂无电子票</p>
+            <button>登录</button>
+          </div>
+        </div>
       </React.Fragment>
     );
   }
