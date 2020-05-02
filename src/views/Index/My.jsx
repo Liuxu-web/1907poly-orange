@@ -119,6 +119,5 @@ export default class My extends Component {
   componentDidMount() {
     // 发布者
     pubsub.publish("my", "/my");
-    console.log(this.props);
   }
 }
