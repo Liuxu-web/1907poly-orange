@@ -91,7 +91,7 @@ https://github.com/Liuxu-web/1907poly-orange 别给我把地址干没了啊!
     - 调用 聚橙网数据渲染了剧院页面（有bug 待完善）
     - git add \* git commit -m "" 提交一次分支
 
-## 2020 年 5 月 01 日
+## 2020 年 5 月 02 日
 
 - 刘旭
 
@@ -103,3 +103,7 @@ https://github.com/Liuxu-web/1907poly-orange 别给我把地址干没了啊!
 
 
 - 谭孟
+    - 修改好影院页面
+    - 调用聚橙网数据渲染了剧院页面
+    - 使用 react-redux 存储了聚橙网影院的基本数据
+    - 还有点问题(待改善)
