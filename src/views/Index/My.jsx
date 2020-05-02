@@ -10,7 +10,7 @@ import React, { Component } from "react";
 // 发布与订阅
 import pubsub from "pubsub-js";
 // 引入mine.css,我的页面样式
-import "../../components/my/mine.css";
+import "../../assets/css/my/mine.css";
 export default class My extends Component {
   render() {
     return (
@@ -24,7 +24,10 @@ export default class My extends Component {
             <div className="header_main">
               <div className="header_main_head">
                 <div className="user_logo">
-                  <img src={"https://m.juooo.com/static/img/logo-user.8413cbf.png"} alt=""></img>
+                  <img
+                    src={"https://m.juooo.com/static/img/logo-user.8413cbf.png"}
+                    alt=""
+                  ></img>
                 </div>
                 <div className="login_reg">
                   <p className="login">登录/注册</p>
@@ -60,7 +63,10 @@ export default class My extends Component {
             </div>
           </header>
           <a href="/#" className="membership">
-            <img src={"https://m.juooo.com/static/img/ad.411f5e6.png"} alt=""></img>
+            <img
+              src={"https://m.juooo.com/static/img/ad.411f5e6.png"}
+              alt=""
+            ></img>
           </a>
           <div className="mine_setting">
             <ul className="mine_setting_list">
@@ -68,7 +74,12 @@ export default class My extends Component {
                 <i></i>
                 <p className="mine_setting_list_items_name">我的订单</p>
               </li>
-              <li className="mine_setting_list_items">
+              <li
+                className="mine_setting_list_items"
+                onClick={() => {
+                  this.props.history.push("/ticketFolder");
+                }}
+              >
                 <i></i>
                 <p className="mine_setting_list_items_name">我的票夹</p>
               </li>

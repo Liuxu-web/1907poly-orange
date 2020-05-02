@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // 引入样式
-import "../../components/my/feedback.css";
+import "../../assets/css/my/feedback.css";
 export default class Feedback extends Component {
   render() {
     return (
