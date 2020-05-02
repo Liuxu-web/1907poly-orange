@@ -11,6 +11,7 @@ import React, { Component } from "react";
 import pubsub from "pubsub-js";
 // 引入mine.css,我的页面样式
 import "../../assets/css/my/mine.css";
+import "../../assets/iconfont/iconfont.css";
 export default class My extends Component {
   render() {
     return (
@@ -19,7 +20,7 @@ export default class My extends Component {
         <div id="app">
           <header className="header">
             <div className="header_icon fl">
-              <i className="icon"></i>
+              <i className={"iconfont icon-kejian"}></i>
             </div>
             <div className="header_main">
               <div className="header_main_head">
@@ -71,7 +72,7 @@ export default class My extends Component {
           <div className="mine_setting">
             <ul className="mine_setting_list">
               <li className="mine_setting_list_items">
-                <i></i>
+                <i className={"iconfont icon-dingdan-"}></i>
                 <p className="mine_setting_list_items_name">我的订单</p>
               </li>
               <li
@@ -80,21 +81,21 @@ export default class My extends Component {
                   this.props.history.push("/ticketFolder");
                 }}
               >
-                <i></i>
+                <i className={"iconfont icon-menpiao"}></i>
                 <p className="mine_setting_list_items_name">我的票夹</p>
               </li>
               <li className="mine_setting_list_items">
-                <i></i>
+                <i className={"iconfont icon-qiabao"}></i>
                 <p className="mine_setting_list_items_name">我的卡包</p>
               </li>
             </ul>
             <ul className="mine_setting_list">
               <li className="mine_setting_list_items">
-                <i></i>
+                <i className={"iconfont icon-qiabao"}></i>
                 <p className="mine_setting_list_items_name">实名购票人</p>
               </li>
               <li className="mine_setting_list_items">
-                <i></i>
+                <i className={"iconfont icon-dizhi"}></i>
                 <p className="mine_setting_list_items_name">收货地址</p>
               </li>
               <li
@@ -103,11 +104,11 @@ export default class My extends Component {
                   this.props.history.push("/feedback/index");
                 }}
               >
-                <i></i>
+                <i className={"iconfont icon-yijianfankui"}></i>
                 <p className="mine_setting_list_items_name">意见反馈</p>
               </li>
               <li className="mine_setting_list_items">
-                <i></i>
+                <i className={"iconfont icon-kefu"}></i>
                 <p className="mine_setting_list_items_name">客服帮助</p>
               </li>
             </ul>
@@ -119,6 +120,5 @@ export default class My extends Component {
   componentDidMount() {
     // 发布者
     pubsub.publish("my", "/my");
-    console.log(this.props);
   }
 }

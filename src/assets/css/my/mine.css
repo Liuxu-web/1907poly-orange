@@ -32,11 +32,10 @@
     align-self: flex-end;
 }
 
-#app .header .header_icon .icon {
+#app .header .header_icon i {
     width: 0.1333rem;
     height: 0.1333rem;
     display: block;
-    background: red;
 }
 
 #app .header .header_main {
@@ -211,7 +210,6 @@
     display: inline-block;
     width: 0.275rem;
     height: 0.275rem;
-    background-color: brown;
 }
 
 #app .mine_setting .mine_setting_list .mine_setting_list_items .mine_setting_list_items_name {

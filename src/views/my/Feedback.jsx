@@ -1,20 +1,16 @@
 import React, { Component } from "react";
-
+// 发布与订阅
+import pubsub from "pubsub-js";
 // 引入样式
 import "../../assets/css/my/feedback.css";
+import HeadNav from "../../components/my/HeadNav";
 export default class Feedback extends Component {
   render() {
     return (
       <React.Fragment>
         <div id="wrap">
           {/* <!-- 头部导航 --> */}
-          <div className="title">
-            <i>&lt;</i>
-            <span className="title_content">意见反馈</span>
-            <div className="title_expand">
-              <i>...</i>
-            </div>
-          </div>
+          <HeadNav titleName={"意见反馈"}></HeadNav>
           {/* <!-- 文本域 --> */}
           <div className="edit_content__text">
             <textarea
@@ -48,5 +44,9 @@ export default class Feedback extends Component {
         </div>
       </React.Fragment>
     );
+  }
+  componentDidMount() {
+    // 发布者
+    pubsub.publish("feedback", this);
   }
 }

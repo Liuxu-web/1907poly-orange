@@ -13,7 +13,7 @@ module.exports = function (app) {
   app.use(
     "^/api",
     proxy.createProxyMiddleware({
-      target: "https://api.juooo.com/home/index/getClassifyHome?",
+      target: "https://api.juooo.com",
       changeOrigin: true,
       pathRewrite: {
         "^/api": "",
