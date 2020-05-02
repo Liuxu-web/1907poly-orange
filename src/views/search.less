@@ -1,46 +1,47 @@
-.search-header-box {
+.search-box {
   width: 100%;
+  height: 100%;
+  background: linear-gradient(#fcfcfc, #f0f0f0);
+}
+
+.search-header {
+  width: 2.8667rem;
   height: 0.3125rem;
-  background: #fefefe;
-  .search-header {
-    width: 2.8667rem;
-    height: 0.3125rem;
-    margin: 0 auto;
-    display: flex;
-    .search-input {
-      width: 2.5125rem;
-      height: 0.25rem;
-      padding-top: 0.0625rem;
-      position: relative;
-      > input {
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        border: 1px solid #eaeaea;
-        background: #f5f5f5;
-        border-radius: 0.1042rem;
-        text-indent: 0.25rem;
-      }
-      i {
-        position: absolute;
-        line-height: 0.25rem;
-        left: 0.0667rem;
-        color: #b3b3b3;
-      }
-      > button {
-        position: absolute;
-        line-height: 0.25rem;
-        background: transparent;
-        color: #b3b3b3;
-        right: 0.0667rem;
-      }
+  margin: 0 auto;
+  display: flex;
+  .search-input {
+    width: 2.5125rem;
+    height: 0.25rem;
+    padding-top: 0.0625rem;
+    position: relative;
+    > input {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #eaeaea;
+      background: #f5f5f5;
+      border-radius: 0.1042rem;
+      text-indent: 0.25rem;
+    }
+    i {
+      position: absolute;
+      line-height: 0.25rem;
+      left: 0.0667rem;
+      color: #b3b3b3;
     }
     > button {
-      padding-top: 0.0625rem;
-      width: 0.3542rem;
-      text-align: end;
+      position: absolute;
+      line-height: 0.25rem;
       background: transparent;
+      color: #b3b3b3;
+      right: 0.0667rem;
     }
+  }
+  > button {
+    padding-top: 0.0625rem;
+    width: 0.3542rem;
+    text-align: end;
+    background: transparent;
   }
 }
 
@@ -60,8 +61,10 @@
   > button {
     width: 0.8833rem;
     height: 0.2958rem;
+    margin: 0.0417rem 0.0417rem;
     background: #f5f5f5;
     border-radius: 0.0417rem;
+    box-shadow: 0 0 0.0417rem white;
   }
   > h2 {
     height: 0.6958rem;
@@ -76,7 +79,8 @@
       padding: 0 0.0833rem;
       margin: 0.0625rem;
       height: 0.2958rem;
-      background: #f5f5f5;
+      background: #fbfbfb;
+      box-shadow: 0 0 0.0417rem white;
       border-radius: 0.0417rem;
     }
   }
@@ -85,7 +89,6 @@
 .search-list {
   width: 100%;
   padding-top: 0.2rem;
-  background: linear-gradient(#fcfcfc, #f0f0f0);
   overflow: hidden;
   display: flex;
   justify-content: space-evenly;

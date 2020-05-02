@@ -3,7 +3,7 @@
  * @创建者: 张莹
  * @Date: 2020-04-29 21:59:20
  * @修改者: 张莹
- * @LastEditTime: 2020-05-02 01:47:03
+ * @LastEditTime: 2020-05-02 20:13:51
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -39,7 +39,13 @@ class Home extends Component {
             </div>
             <div className="search">
               <Icon type="search" size="md" className="search-icon" />
-              <input type="text" placeholder="搜索热门演出" />
+              <input
+                onClick={() => {
+                  this.props.history.push("/search");
+                }}
+                type="text"
+                placeholder="搜索热门演出"
+              />
             </div>
             <div className="rili">
               <i
