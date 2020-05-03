@@ -17,6 +17,8 @@ import Feedback from "../views/my/Feedback";
 import MyAddress from "../views/my/MyAddress"
 // 实名购票人
 import MyRealName from "../views/my/MyRealName"
+import Register from "../views/my/Register"
+import ResetPassword from "../views/my/ResetPassword"
 /*
  * @描述: 路由集中式管理 数据
  * @创建者: 刘旭
@@ -66,6 +68,16 @@ export const routeList = (() => {
       //我的-->实名购票人
       path: "/myrealname",
       component: MyRealName,
+    },
+    {
+      //我的-->注册
+      path: "/register",
+      component: Register,
+    },
+    {
+      //我的-->忘记密码
+      path: "/resetpassword",
+      component: ResetPassword,
     },
     {
       // 首页

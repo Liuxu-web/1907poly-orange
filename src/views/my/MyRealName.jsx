@@ -63,7 +63,7 @@ export default class MyRealName extends Component {
                   />
                 </div>
                 <div className={addressStyle.addName}>
-                  <i className={"iconfont icon-guanbi"}></i>
+                  <i className={"iconfont icon-2"}></i>
                   <p className={addressStyle.addName_text}>
                     请如实填写身份信息，认证通过后不可修改
                   </p>
