@@ -17,7 +17,9 @@ import Feedback from "../views/my/Feedback";
 import MyAddress from "../views/my/MyAddress"
 // 实名购票人
 import MyRealName from "../views/my/MyRealName"
+// 注册
 import Register from "../views/my/Register"
+//忘记密码
 import ResetPassword from "../views/my/ResetPassword"
 /*
  * @描述: 路由集中式管理 数据
