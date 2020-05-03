@@ -1,0 +1,133 @@
+.noaddress {
+    width: 2.9167rem;
+    height: 1rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.noaddress .noaddress_pic {
+    width: 1.0417rem;
+    height: 0.65rem;
+}
+
+.noaddress_text {
+    font-size: 0.1083rem;
+    color: #999;
+    margin-top: 0.1875rem;
+}
+
+.add_address {
+    width: 2.9167rem;
+    height: 0.3917rem;
+    margin: auto;
+    margin-top: 2.1667rem;
+
+}
+
+.add_address_button {
+    width: 2.9167rem;
+    height: 0.3917rem;
+    text-align: center;
+    background-color: #FF6742;
+    color: #FEFEF2;
+    font-size: 0.15rem;
+    border-radius: 0.25rem;
+}
+
+/* 添加收货地址 */
+.edit_address_form {
+    width: 2.875rem;
+    height: 2.8667rem;
+    margin: auto;
+}
+
+.edit_address_form .edit_address_wrap {
+    width: 2.875rem;
+    height: 0.5083rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.edit_address_wrap_text {
+    font-size: 0.1333rem;
+    color: #232323;
+    width: 0.625rem;
+    line-height: 0.2083rem;
+    margin-right: 0.0625rem;
+}
+
+.edit_address_wrap_input {
+    width: 1.875rem;
+    height: 0.2083rem;
+    font-size: 0.1333rem;
+}
+
+.edit_address_address {
+    width: 2.875rem;
+    height: 0.75rem;
+    padding-top: 0.1667rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.0042rem solid #ebebeb;
+}
+
+.edit_address_wrap_text {
+    font-size: 0.1333rem;
+    color: #232323;
+    width: 0.625rem;
+    line-height: 0.2083rem;
+    margin-right: 0.0625rem;
+}
+
+.edit_address_wrap_textarea {
+    width: 1.875rem;
+    height: 0.5542rem;
+    font-size: 0.1333rem;
+}
+
+.swith {
+    width: 2.9167rem;
+    height: 0.4667rem;
+    padding: 0.1667rem 0 0.0833rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.swith_wrap {
+    width: 1.3083rem;
+    height: 0.2167rem;
+    font-size: 0.1333rem;
+    color: #232323;
+    display: flex;
+    align-items: center;
+
+}
+
+.add_address_commit_btn {
+    width: 2.875rem;
+    height: 0.75rem;
+    padding-top: 0.1667rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    border-bottom: 0.0042rem solid #ebebeb;
+    margin-top: 1.5667rem;
+}
+
+.addName {
+    width: 3.125rem;
+    height: 0.1417rem;
+    margin-top: 0.125rem;
+    padding: 0 0.125rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    color: #999999;
+
+}

@@ -8,11 +8,15 @@ import Search from "../views/Search";
 import Home from "../views/Index/Home";
 import Theater from "../views/Index/Theater/Theater";
 import TicketFolder from "../views/Index/TicketFolder";
+// 我的部分
 import My from "../views/Index/My";
 
 // 我的-->意见反馈
 import Feedback from "../views/my/Feedback";
-
+// 收货地址
+import MyAddress from "../views/my/MyAddress"
+// 实名购票人
+import MyRealName from "../views/my/MyRealName"
 /*
  * @描述: 路由集中式管理 数据
  * @创建者: 刘旭
@@ -23,8 +27,7 @@ import Feedback from "../views/my/Feedback";
  */
 // 导出路由配置信息
 export const routeList = (() => {
-  return [
-    {
+  return [{
       // 搜索演出页面
       path: "/search",
       component: Search,
@@ -55,11 +58,20 @@ export const routeList = (() => {
       component: Feedback,
     },
     {
+      //我的-->收货地址
+      path: "/my/address",
+      component: MyAddress,
+    },
+    {
+      //我的-->实名购票人
+      path: "/myrealname",
+      component: MyRealName,
+    },
+    {
       // 首页
       path: "/",
       component: Index,
-      childrens: [
-        {
+      childrens: [{
           // 首页
           path: "/",
           exact: true,
