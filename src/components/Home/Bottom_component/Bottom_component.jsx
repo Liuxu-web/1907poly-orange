@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-05-02 01:24:01
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-02 01:53:24
+ * @LastEditTime: 2020-05-03 16:41:03
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
@@ -29,7 +29,7 @@ class BottomComponent extends Component {
         {/* 底部导航配置  之后可能会封装为组件*/}
         <footer style={style.footer}>
           <ul>
-            {this.props.homeList.bottom_list.map((v) => (
+            {this.props.bottom_list.map((v) => (
               <li key={v.name}>
                 <NavLink to={v.url}>
                   <div
@@ -75,7 +75,7 @@ class BottomComponent extends Component {
 // 映射state 到 当前组件的props
 function mapStateToProps({ homeList }) {
   return {
-    homeList,
+    bottom_list: homeList.bottom_list,
   };
 }
 // 映射dispatch 到 当前组件的props

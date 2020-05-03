@@ -42,9 +42,17 @@
     margin-top: 0.0958rem;
     margin-left: auto;
     margin-right: auto;
-    background: paleturquoise;
+    background: palevioletred;
     border-radius: 0.0625rem;
     overflow: hidden;
+    .home-banner-t-swiper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    img {
+      width: 100%;
+    }
   }
   /* 选项卡 */
   .home-tab {
@@ -58,8 +66,16 @@
       width: 100%;
       height: 100%;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      > img {
+        width: 0.3333rem;
+      }
+      > span {
+        padding-top: 0.0833rem;
+        font-size: 0.1rem;
+      }
     }
   }
   /* 轮播图2 */
@@ -82,10 +98,6 @@
         color: #6e481e;
       }
     }
-    .banner-w {
-      width: @w;
-      height: 1.0042rem;
-    }
   }
   /* 广告 */
   .home-adv {
@@ -94,7 +106,9 @@
     margin-top: 0.25rem;
     margin-left: auto;
     margin-right: auto;
-    background: palegoldenrod;
+    img {
+      width: 100%;
+    }
   }
   /* 热门演出 */
   .home-hot {
@@ -124,16 +138,71 @@
       height: 1.3833rem;
       background: floralwhite;
     }
+    /* 为你推荐 */
     .home-list {
       width: @w;
       display: flex;
       justify-content: space-between;
       > ul {
         width: 1.4125rem;
-        background: palevioletred;
         > li {
           width: 100%;
           min-height: 2.7792rem;
+          margin-bottom: 0.0625rem;
+          background: white;
+          border-radius: 0.0625rem;
+          box-shadow: 0 0 0.0417rem #eeeeee;
+          > img {
+            width: 100%;
+            height: 1.925rem;
+          }
+          > h1 {
+            margin: 0.0667rem 0;
+            padding: 0 0.0875rem;
+            font-size: 0.1125rem;
+            line-height: 0.1583rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            > span {
+              color: white;
+              font-size: 0.0667rem;
+              border-radius: 0.0833rem;
+              padding: 0.0208rem 0.0625rem;
+              background: linear-gradient(to right, #ff8d2c, #ff5241);
+            }
+          }
+          > h2 {
+            padding: 0 0.0875rem;
+            font-size: 0.0833rem;
+          }
+          > h3 {
+            margin: 0.075rem 0;
+            padding: 0 0.0875rem;
+            font-size: 0.1375rem;
+            color: #ff6642;
+            > span {
+              color: #9b9b9b;
+              font-size: 0.0667rem;
+              padding-left: 0.0417rem;
+            }
+          }
+          > h4 {
+            padding: 0 0.0875rem;
+            display: flex;
+            flex-wrap: wrap;
+            > span {
+              border-radius: 0.0833rem;
+              margin-bottom: 0.0208rem;
+              margin-left: 0.0417rem;
+              background: #fff1f0;
+              color: #ff603c;
+              font-size: 0.0667rem;
+              padding: 0.0417rem;
+            }
+          }
         }
       }
     }

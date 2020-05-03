@@ -2,16 +2,24 @@
  * @描述:
  * @创建者: 张莹
  * @Date: 2020-04-29 21:59:20
- * @修改者: 张莹
- * @LastEditTime: 2020-05-03 16:27:30
+ * @修改者: 刘旭
+ * @LastEditTime: 2020-05-03 20:56:41
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
 import React, { Component } from "react";
+
 // 发布与订阅
 import pubsub from "pubsub-js";
 // 样式
 import "./Home.css";
+//引入此路径，才不会打包失败
+import Swiper from "swiper";
+//引入样式，还可以加上自己的样式
+import "../../../node_modules/swiper/css/swiper.min.css";
+import HomeCreator from "../../store/actionsCreator/Home-actionCreator";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 class Home extends Component {
   render() {
@@ -29,49 +37,27 @@ class Home extends Component {
             <i onClick={this.skipRoutre.bind(this, "/calendar")} className={"iconfont icon-rili"}></i>
           </div>
           {/* 顶部轮播图 */}
-          <div className={"home-banner-t"}></div>
+          <div className={"home-banner-t"}>
+            <div className={"home-banner-t-swiper "}>
+              <div className={"swiper-wrapper"}>
+                {this.props.slide_list.map((v) => (
+                  <div key={v.title} className={"swiper-slide"}>
+                    <img src={v.image_url} alt={v.title} />
+                  </div>
+                ))}
+              </div>
+              {/* <!-- 如果需要分页器 --> */}
+              <div className={"swiper-pagination"}></div>
+            </div>
+          </div>
           {/* 选项卡 */}
           <div className={"home-tab"}>
-            <div>
-              <img src="../../assets/img/v.png" alt="" />
-              <span>演唱会</span>
-            </div>
-            <div>
-              <img src="../../assets/img/v.png" alt="" />
-              <span>演唱会</span>
-            </div>
-            <div>
-              <img src="../../assets/img/v.png" alt="" />
-              <span>演唱会</span>
-            </div>
-            <div>
-              <img src="../../assets/img/v.png" alt="" />
-              <span>演唱会</span>
-            </div>
-            <div>
-              <img src="../../assets/img/v.png" alt="" />
-              <span>演唱会</span>
-            </div>
-            <div>
-              <img src="../../assets/img/v.png" alt="" />
-              <span>演唱会</span>
-            </div>
-            <div>
-              <img src="../../assets/img/v.png" alt="" />
-              <span>演唱会</span>
-            </div>
-            <div>
-              <img src="../../assets/img/v.png" alt="" />
-              <span>演唱会</span>
-            </div>
-            <div>
-              <img src="../../assets/img/v.png" alt="" />
-              <span>演唱会</span>
-            </div>
-            <div>
-              <img src="../../assets/img/v.png" alt="" />
-              <span>演唱会</span>
-            </div>
+            {this.props.classify_list.map((v) => (
+              <div key={v.id}>
+                <img src={v.pic} alt={v.name} />
+                <span>{v.name}</span>
+              </div>
+            ))}
           </div>
           {/* 轮播图2 */}
           <div className={"home-banner-w"}>
@@ -81,10 +67,14 @@ class Home extends Component {
                 99元/年 <i className={"iconfont icon-arrow-ios-forward"}></i>
               </span>
             </h1>
-            <div className={"banner-w"}></div>
           </div>
           {/* 广告 */}
-          <div className={"home-adv"}></div>
+          <div className={"home-adv"}>
+            <img
+              src="https://image.juooo.com/group1/M00/03/96/rAoKmV6W4RyAdkouAAJa2-GtD74165.png"
+              alt=""
+            />
+          </div>
           {/* 热门演出 */}
           <div className={"home-hot"}>
             <h1>
@@ -110,10 +100,46 @@ class Home extends Component {
             <h1>为你推荐</h1>
             <div className={"home-list"}>
               <ul>
-                <li>1</li>
+                {this.props.list_lf.map((v) => (
+                  <li key={v.schedular_id}>
+                    <img src={v.pic} alt={v.intro} />
+                    <h1>
+                      <span>主办</span>
+                      {v.name}
+                    </h1>
+                    <h2>{v.end_show_time}</h2>
+                    <h3>
+                      ￥{v.min_price}
+                      <span>起</span>
+                    </h3>
+                    <h4>
+                      {v.support_desc.map((item) => (
+                        <span key={item}>{item}</span>
+                      ))}
+                    </h4>
+                  </li>
+                ))}
               </ul>
               <ul>
-                <li>1</li>
+                {this.props.list_rg.map((v2) => (
+                  <li key={v2.schedular_id}>
+                    <img src={v2.pic} alt={v2.intro} />
+                    <h1>
+                      <span>主办</span>
+                      {v2.name}
+                    </h1>
+                    <h2>{v2.end_show_time}</h2>
+                    <h3>
+                      ￥{v2.min_price}
+                      <span>起</span>
+                    </h3>
+                    <h4>
+                      {v2.support_desc.map((item) => (
+                        <span key={item}>{item}</span>
+                      ))}
+                    </h4>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -123,16 +149,61 @@ class Home extends Component {
       </React.Fragment>
     );
   }
-
+  // 跳转路由 函数
   skipRoutre(path) {
     this.props.history.push(path);
   }
+  // 轮播图实例
+  swiper() {
+    setTimeout(() => {
+      new Swiper(".home-banner-t-swiper", {
+        loop: true, // 循环模式选项
+        autoplay: {
+          delay: 3000,
+          stopOnLastSlide: false,
+          disableOnInteraction: false,
+        },
+        simulateTouch: false, //禁止鼠标模拟
+        // 如果需要分页器
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        observer: true, //修改swiper自己或子元素时，自动初始化swiper
+        observeParents: true, //修改swiper的父元素时，自动初始化swiper
+      });
+    }, 1000);
+  }
 
   componentDidMount() {
+    this.props.GET_EXCLUSIVE.apply(this, [this.props.page]);
     // 发布者
     pubsub.publish("home", "/");
-    console.log(this.props);
+    // 顶部轮播图
+    this.swiper();
+    // 订阅者 执行下一页测试
+    pubsub.subscribe("page", (msgName, params) => {
+      this.props.GET_EXCLUSIVE.apply(this, [params]);
+    });
+  }
+  // 清除 瀑布流数据
+  componentWillUnmount() {
+    this.props.CHANGE_GET_EXCLUSIVE.apply(this);
   }
 }
+// 映射 仓库state  到 当前组件的props
+function mapStateToProps({ homeList }) {
+  return {
+    classify_list: homeList.classify_list,
+    slide_list: homeList.slide_list,
+    list_lf: homeList.list_lf,
+    list_rg: homeList.list_rg,
+    page: homeList.page,
+    recommend_ad_list: homeList.recommend_ad_list,
+  };
+}
+// 映射 dispatch 到 当前组件的props
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(HomeCreator, dispatch);
+}
 
-export default Home;
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
