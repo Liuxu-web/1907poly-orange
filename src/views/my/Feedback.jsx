@@ -4,6 +4,7 @@ import pubsub from "pubsub-js";
 // 引入样式
 import "../../assets/css/my/feedback.css";
 import HeadNav from "../../components/my/HeadNav";
+import "../../assets/iconfont/iconfont.css";
 export default class Feedback extends Component {
   render() {
     return (
@@ -34,7 +35,7 @@ export default class Feedback extends Component {
             <h3 className="city_live_title">所在城市</h3>
             <div className="city_live_choose">
               <span className="city_live_choose_text">请选择城市</span>
-              <i>&gt;</i>
+              <i className={"iconfont icon-arrow-ios-forward"}></i>
             </div>
           </div>
           {/* <!-- 提交按钮 --> */}

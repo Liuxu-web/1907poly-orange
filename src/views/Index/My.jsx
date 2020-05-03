@@ -33,7 +33,8 @@ export default class My extends Component {
                 <div className="login_reg">
                   <p className="login">登录/注册</p>
                   <p className="click_login">
-                    请点击登录<i>&gt;</i>
+                    请点击登录
+                    <i className={"iconfont icon-arrow-ios-forward"}></i>
                   </p>
                 </div>
               </div>
@@ -90,11 +91,21 @@ export default class My extends Component {
               </li>
             </ul>
             <ul className="mine_setting_list">
-              <li className="mine_setting_list_items">
+              <li
+                className="mine_setting_list_items"
+                onClick={() => {
+                  this.props.history.push("/myrealname");
+                }}
+              >
                 <i className={"iconfont icon-qiabao"}></i>
                 <p className="mine_setting_list_items_name">实名购票人</p>
               </li>
-              <li className="mine_setting_list_items">
+              <li
+                className="mine_setting_list_items"
+                onClick={() => {
+                  this.props.history.push("/my/address");
+                }}
+              >
                 <i className={"iconfont icon-dizhi"}></i>
                 <p className="mine_setting_list_items_name">收货地址</p>
               </li>
