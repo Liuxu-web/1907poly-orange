@@ -28,11 +28,26 @@ export default class My extends Component {
                   <img
                     src={"https://m.juooo.com/static/img/logo-user.8413cbf.png"}
                     alt=""
+                    onClick={() => {
+                      this.props.history.push("/login");
+                    }}
                   ></img>
                 </div>
                 <div className="login_reg">
-                  <p className="login">登录/注册</p>
-                  <p className="click_login">
+                  <p
+                    className="login"
+                    onClick={() => {
+                      this.props.history.push("/login");
+                    }}
+                  >
+                    登录/注册
+                  </p>
+                  <p
+                    className="click_login"
+                    onClick={() => {
+                      this.props.history.push("/login");
+                    }}
+                  >
                     请点击登录
                     <i className={"iconfont icon-arrow-ios-forward"}></i>
                   </p>

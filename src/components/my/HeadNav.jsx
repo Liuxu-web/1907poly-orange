@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import pubsub from "pubsub-js";
 // 引入头部组件样式
 import headStyle from "../../assets/css/my/headnav.module.css";
+
 import "../../assets/iconfont/iconfont.css";
 class HeadNav extends Component {
   constructor(props) {
