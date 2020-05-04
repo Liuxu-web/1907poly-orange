@@ -3,21 +3,29 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 19:01:41
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-03 18:34:35
+ * @LastEditTime: 2020-05-04 19:22:49
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 export default {
   // 底部导航数据
   bottom_list: [],
+
   // ["演唱会" , "音乐剧" , "舞台剧" ......]
   classify_list: [],
+
   // 顶部轮播图数据
   slide_list: [],
-  // https://api.juooo.com/vip/index/getVipHomeSchedular?city_id=1&version=6.1.1&referer=2
-  // 瀑布
 
+  // 瀑布流
   list_lf: [],
   list_rg: [],
   page: 1,
-  recommend_ad_list: [],
+
+  // 热门演出
+  hotLisT: [],
+
+  // 巡回演出
+  tour: [],
+  // 会员折扣轮播图
+  allList: [],
 };

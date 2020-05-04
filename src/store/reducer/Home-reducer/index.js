@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 18:43:34
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-03 20:54:48
+ * @LastEditTime: 2020-05-04 19:28:49
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -12,6 +12,9 @@ import {
   GET_CLASS_IFY_HOME,
   GET_EXCLUSIVE_LIST,
   CHANGE_EXCLUSIVE_LIST,
+  GET_ALL_LIST,
+  GET_HOT_LIST,
+  GET_TOUR,
 } from "../../actionType/Home-actionType";
 // 图片
 import bottomImg1 from "../../../assets/img/bottom/1.png";
@@ -45,6 +48,23 @@ const getHomeReducer = function (state = HomeList, { type, payload }) {
       return state;
     }
 
+    // 热门演出
+    case GET_HOT_LIST: {
+      state.hotLisT = payload;
+      return state;
+    }
+    // 巡回演出
+    case GET_TOUR: {
+      state.tour = payload;
+      return state;
+    }
+
+    // 会员折扣轮播图
+    case GET_ALL_LIST: {
+      state.allList = payload;
+      return state;
+    }
+
     // 获取瀑布流数据
     case GET_EXCLUSIVE_LIST: {
       // 遍历 判断奇数偶数下标 添加到两个数组中
@@ -56,7 +76,6 @@ const getHomeReducer = function (state = HomeList, { type, payload }) {
         }
       });
       state.page = payload.page;
-      state.recommend_ad_list = payload.recommend_ad_list;
       return state;
     }
 
