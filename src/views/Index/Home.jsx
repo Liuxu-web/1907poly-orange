@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 21:59:20
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-04 20:39:49
+ * @LastEditTime: 2020-05-05 00:01:49
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -157,7 +157,7 @@ class Home extends Component {
             <div className={"home-list"}>
               <ul>
                 {this.props.list_lf.map((v) => (
-                  <li key={v.schedular_id}>
+                  <li onClick={this.skipRoutre.bind(this, "/details")} key={v.schedular_id + v.show_id}>
                     <img src={v.pic} alt={v.intro} />
                     <h1>
                       <span>主办</span>
@@ -178,7 +178,10 @@ class Home extends Component {
               </ul>
               <ul>
                 {this.props.list_rg.map((v2) => (
-                  <li key={v2.schedular_id}>
+                  <li
+                    onClick={this.skipRoutre.bind(this, "/details")}
+                    key={v2.schedular_id + v2.show_id}
+                  >
                     <img src={v2.pic} alt={v2.intro} />
                     <h1>
                       <span>主办</span>
@@ -198,6 +201,13 @@ class Home extends Component {
                 ))}
               </ul>
             </div>
+          </div>
+          {/* 开通会员广告 */}
+          <div className={"home-adlet"}>
+            <img
+              src={"https://image.juooo.com/group1/M00/03/94/rAoKmV58jOmAAI84AAAp3i6IEAQ605.png"}
+              alt="开通会员"
+            />
           </div>
           {/* 底部填充 */}
           <div className={"home-footer"}>没有更多了</div>

@@ -3,11 +3,9 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 18:56:38
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-04 19:29:36
+ * @LastEditTime: 2020-05-04 23:53:57
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
-// 发布与订阅
-import pubsub from "pubsub-js";
 
 import {
   GET_CLASS_IFY_HOME,
@@ -90,12 +88,9 @@ export default {
   CHANGE_EXCLUSIVE(page = 1) {
     return async (dispatch) => {
       const url = `/Show/Search/getShowList?city_id=0&category=&keywords=&venue_id=&start_time=&page=${page}&referer_type=index&version=6.1.1&referer=2`;
-      const { data } = await this.$get("/api" + url);
-      dispatch(getExclusive(data));
-      // 发布者
-      if (data) {
-        pubsub.publish("boll");
-      }
+      await this.$get("/api" + url).then(({ data }) => {
+        dispatch(getExclusive(data));
+      });
     };
   },
   // 巡回演出

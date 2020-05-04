@@ -6,6 +6,7 @@
   /* 轮播图2 */
   /* 广告 */
   /* 热门演出 */
+  /* 小广告 */
   /* 底部填充 */
 }
 .home-box .home-header {
@@ -24,6 +25,7 @@
 }
 .home-box .home-header > button > i {
   color: #ff6a41;
+  font-size: 0.125rem;
 }
 .home-box .home-header > p {
   box-sizing: border-box;
@@ -297,6 +299,7 @@
   justify-content: space-between;
 }
 .home-box .home-hot .home-list > ul {
+  min-height: 2.7792rem;
   width: 1.4125rem;
 }
 .home-box .home-hot .home-list > ul > li {
@@ -357,6 +360,17 @@
   color: #ff603c;
   font-size: 0.0667rem;
   padding: 0.0417rem;
+}
+.home-box .home-adlet {
+  position: fixed;
+  bottom: 0.7083rem;
+  right: 0.1208rem;
+  width: 0.5208rem;
+  height: 0.35rem;
+  z-index: 500;
+}
+.home-box .home-adlet > img {
+  width: 100%;
 }
 .home-box .home-footer {
   height: 0.6667rem;

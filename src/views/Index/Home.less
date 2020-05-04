@@ -1,7 +1,6 @@
 @w: 2.8833rem;
 .home-box {
   width: 100%;
-
   background: linear-gradient(#ffffff, #f0f0f0);
   .home-header {
     width: @w;
@@ -17,6 +16,7 @@
       font-size: 0.125rem;
       > i {
         color: #ff6a41;
+        font-size: 0.125rem;
       }
     }
     > p {
@@ -298,6 +298,7 @@
       display: flex;
       justify-content: space-between;
       > ul {
+        min-height: 2.7792rem;
         width: 1.4125rem;
         > li {
           width: 100%;
@@ -361,7 +362,19 @@
       }
     }
   }
+  /* 小广告 */
+  .home-adlet {
+    position: fixed;
+    bottom: 0.7083rem;
+    right: 0.1208rem;
+    width: 0.5208rem;
+    height: 0.35rem;
 
+    z-index: 500;
+    > img {
+      width: 100%;
+    }
+  }
   /* 底部填充 */
   .home-footer {
     height: 0.6667rem;

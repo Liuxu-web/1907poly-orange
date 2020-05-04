@@ -1,10 +1,13 @@
+// 没有 底部导航
 import Login from "../views/Login";
 import Error from "../views/Error";
 import Index from "../views/Index";
 import City_component from "../components/Home/City_component/City_component";
 import Calendar_component from "../components/Home/Calendar_component/Calendar_component";
 import Search from "../views/Search";
+import Details from "../views/Details";
 
+// 有底部导航
 import Home from "../views/Index/Home";
 import Theater from "../views/Index/Theater/Theater";
 import TicketFolder from "../views/Index/TicketFolder";
@@ -14,13 +17,14 @@ import My from "../views/Index/My";
 // 我的-->意见反馈
 import Feedback from "../views/my/Feedback";
 // 收货地址
-import MyAddress from "../views/my/MyAddress"
+import MyAddress from "../views/my/MyAddress";
 // 实名购票人
-import MyRealName from "../views/my/MyRealName"
+import MyRealName from "../views/my/MyRealName";
 // 注册
-import Register from "../views/my/Register"
+import Register from "../views/my/Register";
 //忘记密码
-import ResetPassword from "../views/my/ResetPassword"
+import ResetPassword from "../views/my/ResetPassword";
+
 /*
  * @描述: 路由集中式管理 数据
  * @创建者: 刘旭
@@ -31,7 +35,12 @@ import ResetPassword from "../views/my/ResetPassword"
  */
 // 导出路由配置信息
 export const routeList = (() => {
-  return [{
+  return [
+    {
+      path: "/details",
+      component: Details,
+    },
+    {
       // 搜索演出页面
       path: "/search",
       component: Search,
@@ -85,7 +94,8 @@ export const routeList = (() => {
       // 首页
       path: "/",
       component: Index,
-      childrens: [{
+      childrens: [
+        {
           // 首页
           path: "/",
           exact: true,

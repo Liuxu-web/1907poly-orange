@@ -3,11 +3,13 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 18:43:34
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-04 19:28:49
+ * @LastEditTime: 2020-05-04 23:54:27
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
 import HomeList from "../../state/Home-state";
+// 发布与订阅
+import pubsub from "pubsub-js";
 import {
   GET_CLASS_IFY_HOME,
   GET_EXCLUSIVE_LIST,
@@ -76,6 +78,9 @@ const getHomeReducer = function (state = HomeList, { type, payload }) {
         }
       });
       state.page = payload.page;
+
+      // 发布者
+      pubsub.publish("boll");
       return state;
     }
 

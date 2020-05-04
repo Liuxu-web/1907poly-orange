@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-27 21:00:50
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-03 20:55:14
+ * @LastEditTime: 2020-05-04 23:56:05
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -15,7 +15,6 @@ import MyRoute from "./routers/MyRoute";
 // 发布与订阅
 import pubsub from "pubsub-js";
 import { connect } from "react-redux";
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -55,7 +54,7 @@ class App extends Component {
         // 获取 home 页面的总高度
         const homeBoxH = parseInt(getComputedStyle(homeBox).height);
         // 判断 滚动的高度 加上 500 + 底部导航 的高度 是否大于 home的高度
-        if (app.scrollTop + 1000 + 736 > homeBoxH) {
+        if (app.scrollTop + 500 + 736 > homeBoxH) {
           // 发布者
           pubsub.publish("page", this.props.page + 1);
           this.boll = false;
