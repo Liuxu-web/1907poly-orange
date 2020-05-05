@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 21:59:20
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 15:53:28
+ * @LastEditTime: 2020-05-05 17:16:36
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -28,13 +28,26 @@ class Home extends Component {
         <div className={"home-box"}>
           {/* 头部 */}
           <div className={"home-header"}>
-            <button onClick={this.skipRoutre.bind(this, "/city")}>
+            <button
+              onClick={() => {
+                this.props.history.push("/city");
+              }}
+            >
               <i className={"iconfont icon-dingwei"}></i> 全国
             </button>
-            <p onClick={this.skipRoutre.bind(this, "/search")}>
+            <p
+              onClick={() => {
+                this.props.history.push("/search");
+              }}
+            >
               <i className={"iconfont icon-sousuo1"}></i> 搜索热门演出
             </p>
-            <i onClick={this.skipRoutre.bind(this, "/calendar")} className={"iconfont icon-rili"}></i>
+            <i
+              onClick={() => {
+                this.props.history.push("/calendar");
+              }}
+              className={"iconfont icon-rili"}
+            ></i>
           </div>
           {/* 顶部轮播图 */}
           <div className={"home-banner-t"}>

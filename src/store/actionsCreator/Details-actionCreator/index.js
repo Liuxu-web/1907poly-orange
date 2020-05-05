@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-05-05 14:25:46
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 17:10:46
+ * @LastEditTime: 2020-05-05 17:13:46
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -56,7 +56,6 @@ export default {
       const url = `/Show/Search/getShowList?category=1&city_id=1&version=6.1.1&referer=2`;
       const { data } = await this.$get("/api" + url);
       dispatch(getType(data.list));
-      console.log(this.props);
     };
   },
   // 清空数据

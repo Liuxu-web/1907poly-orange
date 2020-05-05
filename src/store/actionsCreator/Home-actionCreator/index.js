@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 18:56:38
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 15:49:22
+ * @LastEditTime: 2020-05-05 17:14:05
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -91,7 +91,6 @@ export default {
       await this.$get("/api" + url).then(({ data }) => {
         dispatch(getExclusive(data));
       });
-      console.log(this.props);
     };
   },
   // 巡回演出
