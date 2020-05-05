@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 21:59:20
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 20:10:56
+ * @LastEditTime: 2020-05-05 23:15:28
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -24,7 +24,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: localStorage.city ? localStorage.city : "定位中",
+      city: sessionStorage.city ? sessionStorage.city : "定位中",
     };
   }
 
@@ -333,7 +333,7 @@ class Home extends Component {
         _this.setState({
           city: addressComponent.city,
         });
-        localStorage.city = addressComponent.city;
+        sessionStorage.city = addressComponent.city;
       }
 
       function onError(data) {

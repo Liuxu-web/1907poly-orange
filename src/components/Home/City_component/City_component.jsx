@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-30 19:05:12
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 20:25:23
+ * @LastEditTime: 2020-05-05 23:17:03
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
@@ -42,17 +42,24 @@ class City_component extends Component {
           {/* <!-- 定位城市 --> */}
           <div className={"city_content_top"}>
             <h1>定位城市</h1>
-            <button>{localStorage.city}</button>
+            <button>{sessionStorage.city}</button>
           </div>
           {/* <!-- 热门城市 --> */}
           <div className={"city_content_middle"}>
             <h1>热门城市</h1>
             <div className={"city_list_top"}>
-              <button>全国</button>
+              <button
+                onClick={() => {
+                  sessionStorage.city = "全国";
+                  this.props.history.push("/");
+                }}
+              >
+                全国
+              </button>
               {this.props.hot_city_List.map((v) => (
                 <button
                   onClick={() => {
-                    localStorage.city = v.name;
+                    sessionStorage.city = v.name;
                     this.props.history.push("/");
                   }}
                   key={v.id}
@@ -73,7 +80,7 @@ class City_component extends Component {
                   {v.list.map((item) => (
                     <li
                       onClick={() => {
-                        localStorage.city = item.name;
+                        sessionStorage.city = item.name;
                         this.props.history.push("/");
                       }}
                       key={item.id}

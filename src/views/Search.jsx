@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-05-02 13:49:12
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-02 21:43:26
+ * @LastEditTime: 2020-05-05 23:10:45
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
@@ -79,7 +79,10 @@ class Search extends Component {
             <div className={"search-list"}>
               <ul>
                 {this.props.searchDataLf.map((v) => (
-                  <li key={v.schedular_id}>
+                  <li
+                    onClick={this.skipRoutre.bind(this, "/details/", v.schedular_id)}
+                    key={v.schedular_id}
+                  >
                     <span>{v.city_name}</span>
                     <img src={v.pic} alt={v.intro} />
                     <h1>{v.intro}</h1>
@@ -90,12 +93,15 @@ class Search extends Component {
               </ul>
               <ul>
                 {this.props.searchDataRg.map((v) => (
-                  <li key={v.schedular_id}>
+                  <li
+                    onClick={this.skipRoutre.bind(this, "/details/", v.schedular_id)}
+                    key={v.schedular_id}
+                  >
                     <span>{v.city_name}</span>
                     <img src={v.pic} alt={v.intro} />
                     <h1>{v.intro}</h1>
                     <p>{v.end_show_time}</p>
-                    <h2>{v.min_price === "0" ? "待定" : `￥${v.min_price}起`}</h2>
+                    {v.min_price === "0" ? <h2>待定</h2> : <h2>￥{v.min_price} 起</h2>}
                     {v.support_desc.length > 0 ? (
                       <h3>
                         {v.support_desc.map((item, index) => (
@@ -123,6 +129,11 @@ class Search extends Component {
         timeout = null;
       }, wait);
     };
+  }
+
+  // 跳转路由 函数
+  skipRoutre(path, id) {
+    this.props.history.push(`${path}${id}.html`);
   }
 
   // 输入内容查询显示结果
@@ -178,9 +189,13 @@ class Search extends Component {
     this.props.CHANGE_SEARCH_DATA.apply(this, [this.text]);
     this.props.history.push("/");
   }
-
+  //
   componentDidMount() {
     this.props.GET_SEARCH_WORD.apply(this);
+  }
+  // 销毁组件 清空数据
+  componentWillUnmount() {
+    this.props.CHANGE_SEARCH_DATA.apply(this, [this.text]);
   }
 }
 

@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-05-02 15:42:28
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-02 20:21:38
+ * @LastEditTime: 2020-05-05 23:06:59
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -38,6 +38,7 @@ export default {
       const { code, data, msg } = await this.$get(url);
       if (code === "200") dispatch(getSearchData(data));
       else console.log(msg);
+      console.log(this.props);
     };
   },
   // 热门搜索
@@ -48,7 +49,6 @@ export default {
 
       if (code === "200") dispatch(getSearchWord(data));
       else console.log(msg);
-      console.log(this.props);
     };
   },
   CHANGE_SEARCH_DATA(ele) {

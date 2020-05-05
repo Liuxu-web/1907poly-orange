@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-05-04 21:41:39
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 20:13:16
+ * @LastEditTime: 2020-05-05 23:12:09
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
@@ -171,7 +171,13 @@ class Details extends Component {
                 <i className={"iconfont icon-kefu"}></i>
                 <span>客服</span>
               </div>
-              <button>选座购买</button>
+              <button
+                onClick={() => {
+                  this.props.history.push("/login");
+                }}
+              >
+                选座购买
+              </button>
             </div>
           </div>
         )}
