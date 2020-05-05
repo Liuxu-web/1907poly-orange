@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-30 19:05:12
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-01 20:57:31
+ * @LastEditTime: 2020-05-05 20:25:23
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
@@ -42,7 +42,7 @@ class City_component extends Component {
           {/* <!-- 定位城市 --> */}
           <div className={"city_content_top"}>
             <h1>定位城市</h1>
-            <button>定位失败,点击重试</button>
+            <button>{localStorage.city}</button>
           </div>
           {/* <!-- 热门城市 --> */}
           <div className={"city_content_middle"}>
@@ -50,7 +50,15 @@ class City_component extends Component {
             <div className={"city_list_top"}>
               <button>全国</button>
               {this.props.hot_city_List.map((v) => (
-                <button key={v.id}>{v.name}</button>
+                <button
+                  onClick={() => {
+                    localStorage.city = v.name;
+                    this.props.history.push("/");
+                  }}
+                  key={v.id}
+                >
+                  {v.name}
+                </button>
               ))}
             </div>
           </div>
@@ -63,7 +71,15 @@ class City_component extends Component {
                 <ul>
                   {/* 循环 字母城市 */}
                   {v.list.map((item) => (
-                    <li key={item.id}>{item.name}</li>
+                    <li
+                      onClick={() => {
+                        localStorage.city = item.name;
+                        this.props.history.push("/");
+                      }}
+                      key={item.id}
+                    >
+                      {item.name}
+                    </li>
                   ))}
                 </ul>
               </React.Fragment>

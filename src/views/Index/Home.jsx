@@ -3,12 +3,11 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 21:59:20
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 17:16:36
+ * @LastEditTime: 2020-05-05 20:10:56
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
 import React, { Component } from "react";
-
 // 发布与订阅
 import pubsub from "pubsub-js";
 // 样式
@@ -22,6 +21,13 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      city: localStorage.city ? localStorage.city : "定位中",
+    };
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -33,7 +39,8 @@ class Home extends Component {
                 this.props.history.push("/city");
               }}
             >
-              <i className={"iconfont icon-dingwei"}></i> 全国
+              <i className={"iconfont icon-dingwei"}></i>
+              {this.state.city}
             </button>
             <p
               onClick={() => {
@@ -124,7 +131,14 @@ class Home extends Component {
             <div className={"home-slide"}>
               <ul>
                 {this.props.hotLisT.map((v) => (
-                  <li key={v.show_name}>
+                  <li
+                    onClick={this.skipRoutre.bind(
+                      this,
+                      "/details/",
+                      v.schedular_url.substring(v.schedular_url.lastIndexOf("/") + 1)
+                    )}
+                    key={v.show_name}
+                  >
                     <img src={v.pic} alt="" />
                     <h1>{v.show_name}</h1>
                   </li>
@@ -272,6 +286,7 @@ class Home extends Component {
 
   // 组件渲染结束执行钩子
   componentDidMount() {
+    document.querySelector(".home-box").scrollIntoView(true); //为ture返回顶部，false为底部
     // 获取巡回演出
     this.props.CHANGE_TOUR.apply(this);
     // 获取热门演出列表
@@ -288,10 +303,48 @@ class Home extends Component {
     pubsub.subscribe("page", (msgName, params) => {
       this.props.CHANGE_EXCLUSIVE.apply(this, [params]);
     });
+    // 定位当前城市
+    const _this = this;
+    // eslint-disable-next-line no-undef
+    AMap.plugin("AMap.Geolocation", function () {
+      // eslint-disable-next-line no-undef
+      var geolocation = new AMap.Geolocation({
+        // 是否使用高精度定位，默认：true
+        enableHighAccuracy: true,
+        // 设置定位超时时间，默认：无穷大
+        timeout: 10000,
+        // 定位按钮的停靠位置的偏移量，默认：Pixel(10, 20)
+        // eslint-disable-next-line no-undef
+        buttonOffset: new AMap.Pixel(10, 20),
+        //  定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+        zoomToAccuracy: true,
+        //  定位按钮的排放位置,  RB表示右下
+        buttonPosition: "RB",
+      });
+
+      geolocation.getCurrentPosition();
+      // eslint-disable-next-line no-undef
+      AMap.event.addListener(geolocation, "complete", onComplete);
+      // eslint-disable-next-line no-undef
+      AMap.event.addListener(geolocation, "error", onError);
+
+      function onComplete({ addressComponent }) {
+        // data是具体的定位信息
+        _this.setState({
+          city: addressComponent.city,
+        });
+        localStorage.city = addressComponent.city;
+      }
+
+      function onError(data) {
+        // 定位出错
+      }
+    });
   }
   // 清除 瀑布流数据
   componentWillUnmount() {
     this.props.CHANGE_GET_EXCLUSIVE.apply(this);
+    this.setState = () => null;
   }
 }
 // 映射 仓库state  到 当前组件的props

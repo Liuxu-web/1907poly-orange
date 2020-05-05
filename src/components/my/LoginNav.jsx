@@ -20,15 +20,12 @@ export default class LoginNav extends Component {
             <i
               className={"iconfont icon-arrow-ios-back"}
               onClick={() => {
-                this.state.routerInfo.props.history.go(-1);
+                this.state.routerInfo.props.history.push("/");
               }}
             ></i>
           </div>
           <div className={headStyle.login_pic}>
-            <img
-              src="https://m.juooo.com/static/img/login_logo.4a43235.png"
-              alt=""
-            />
+            <img src="https://m.juooo.com/static/img/login_logo.4a43235.png" alt="" />
           </div>
         </div>
       </React.Fragment>

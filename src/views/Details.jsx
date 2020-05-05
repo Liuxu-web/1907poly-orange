@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-05-04 21:41:39
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 17:10:35
+ * @LastEditTime: 2020-05-05 20:13:16
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
@@ -71,7 +71,12 @@ class Details extends Component {
                   <h1>{this.props.venue_name}</h1>
                   <h2>{this.props.venue_address}</h2>
                   <span>
-                    <i className={"iconfont icon-dizhi"}></i>
+                    <i
+                      onClick={() => {
+                        this.props.history.push("/amap");
+                      }}
+                      className={"iconfont icon-dizhi"}
+                    ></i>
                   </span>
                 </div>
                 <div className={"banner"}>

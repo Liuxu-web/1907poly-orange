@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-05-01 13:26:57
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-01 21:03:03
+ * @LastEditTime: 2020-05-05 20:29:50
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
@@ -51,7 +51,13 @@ class CalendarComponent extends Component {
               ))}
             </ul>
             <div>
-              全国 <i className={"iconfont icon-dizhi"}></i>
+              全国
+              <i
+                onClick={() => {
+                  this.props.history.push("/amap");
+                }}
+                className={"iconfont icon-dizhi"}
+              ></i>
             </div>
           </div>
           {/* 年月 */}

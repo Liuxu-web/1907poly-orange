@@ -24,6 +24,7 @@ import MyRealName from "../views/my/MyRealName";
 import Register from "../views/my/Register";
 //忘记密码
 import ResetPassword from "../views/my/ResetPassword";
+import Amap from "../views/Amap";
 
 /*
  * @描述: 路由集中式管理 数据
@@ -37,6 +38,11 @@ import ResetPassword from "../views/my/ResetPassword";
 export const routeList = (() => {
   return [
     {
+      path: "/amap",
+      component: Amap,
+    },
+    {
+      // 演出详情页面
       path: "/details/:id.html",
       component: Details,
     },
@@ -68,16 +74,19 @@ export const routeList = (() => {
     {
       //我的-->意见反馈
       path: "/feedback/index",
+      verify: true,
       component: Feedback,
     },
     {
       //我的-->收货地址
       path: "/my/address",
+      verify: true,
       component: MyAddress,
     },
     {
       //我的-->实名购票人
       path: "/myrealname",
+      verify: true,
       component: MyRealName,
     },
     {
