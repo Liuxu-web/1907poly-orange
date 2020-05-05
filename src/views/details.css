@@ -1,11 +1,15 @@
 .details-box {
-  height: 100%;
   width: 100%;
+  padding-bottom: 0.4541rem;
   position: relative;
   background-color: #f5f5f5;
   /* 顶部 */
   /* 购票信息 */
   /* 购票提示 */
+  /* 演出介绍 */
+  /* 温馨提示 */
+  /* 相关推荐 */
+  /* 底部购买 */
 }
 .details-box .header-backImg {
   position: absolute;
@@ -166,9 +170,190 @@
 }
 .details-box .butTitle {
   width: 100%;
-  height: 1.3542rem;
   background: white;
   margin-top: 0.1042rem;
+}
+.details-box .butTitle > ul {
+  height: 100%;
+  width: 100%;
+}
+.details-box .butTitle > ul > li {
+  width: auto;
+  margin: 0 0.125rem;
+  min-height: 0.3875rem;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  align-items: center;
+  font-size: 0.1083rem;
+}
+.details-box .butTitle > ul > li > span {
+  color: #a5a8a9;
+  padding-right: 0.1458rem;
+}
+.details-box .butTitle > ul > li > h1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.details-box .butTitle > ul > li > h1 span {
+  color: #ff6f4d;
+  padding: 0.0208rem;
+  border: 1px solid #ff6f4d;
+  border-radius: 0.0375rem;
+  margin-right: 0.0625rem;
+  font-size: 0.0667rem;
+}
+.details-box .butTitle > ul > li > h2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.details-box .butTitle > ul > li > h2 span {
+  color: #ff6f4d;
+  margin-left: 0.0625rem;
+}
+.details-box .butTitle > ul > li > h3 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 0.1667rem;
+}
+.details-box .presentation {
+  margin-top: 0.1rem;
+  width: 100%;
+  background: white;
+  overflow: hidden;
+  position: relative;
+}
+.details-box .presentation > h1 {
+  padding: 0.0833rem 0.125rem;
+  font-size: 0.15rem;
+  font-weight: 600;
+}
+.details-box .presentation > div {
+  padding: 0 0.125rem;
+  line-height: 0.1667rem;
+}
+.details-box .presentation > div img {
+  width: 100%;
+}
+.details-box .presentation .show {
+  box-sizing: border-box;
+  width: 100%;
+  height: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  line-height: 0.5rem;
+  font-size: 0.1167rem;
+  color: #ff6946;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), #ffffff);
+  z-index: 99;
+}
+.details-box .warm-title {
+  width: 100%;
+  height: 0.7458rem;
+  margin-top: 0.1rem;
+  background: white;
+}
+.details-box .warm-title > h1 {
+  padding: 0.1083rem 0.125rem;
+  font-size: 0.15rem;
+  font-weight: 600;
+}
+.details-box .warm-title > ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 0 0.125rem;
+  height: 0.2917rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.details-box .details-type {
+  margin-top: 0.125rem;
+  width: 100%;
+  background: white;
+}
+.details-box .details-type > h1 {
+  padding: 0.1042rem 0.125rem;
+  font-size: 0.15rem;
+  font-weight: 600;
+}
+.details-box .details-type .type {
+  height: 1.1875rem;
+  width: auto;
+  padding: 0.0833rem 0.125rem;
+  display: flex;
+}
+.details-box .details-type .type .lf {
+  height: 100%;
+  width: 0.8667rem;
+  border-radius: 0.0417rem;
+  overflow: hidden;
+}
+.details-box .details-type .type .lf > img {
+  width: 100%;
+  height: 100%;
+}
+.details-box .details-type .type .rg {
+  flex: 1;
+  height: 100%;
+  padding-left: 0.125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.details-box .details-type .type .rg > h1 {
+  font-size: 0.1rem;
+}
+.details-box .details-type .type .rg > h2 {
+  font-size: 0.1333rem;
+  line-height: 0.1667rem;
+}
+.details-box .details-type .type .rg > h3 {
+  font-size: 0.0833rem;
+  color: #656565;
+}
+.details-box .details-type .type .rg > h4 {
+  font-size: 0.0667rem;
+}
+.details-box .details-type .type .rg > h4 > span {
+  background: #fef1ef;
+  color: #fe704d;
+  padding: 0.0208rem;
+  border-radius: 0.0417rem;
+  margin-right: 0.0625rem;
+}
+.details-box .details-type .type .rg > h5 {
+  font-size: 0.125rem;
+  color: #fe704d;
+}
+.details-box .details-type .type .rg > h5 > span {
+  font-size: 0.0833rem;
+  color: #656565;
+}
+.details-box .btn {
+  background: white;
+  width: auto;
+  padding: 0.125rem 0.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details-box .btn > button {
+  padding: 0.0542rem 0.3333rem;
+  border: 1px solid #ff6f5b;
+  border-radius: 0.0333rem;
+  background: transparent;
+  color: #ff6f5b;
+  font-size: 0.1375rem;
 }
 .details-box .buyFooter {
   width: 100%;
@@ -198,4 +383,11 @@
   box-shadow: 0 0 0.0417rem #ff9c41;
   border-radius: 0.1667rem;
   background: linear-gradient(to right, #ff9c41, #ff4c44);
+}
+.loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

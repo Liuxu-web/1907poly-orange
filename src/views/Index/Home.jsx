@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 21:59:20
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 00:01:49
+ * @LastEditTime: 2020-05-05 15:53:28
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -157,7 +157,10 @@ class Home extends Component {
             <div className={"home-list"}>
               <ul>
                 {this.props.list_lf.map((v) => (
-                  <li onClick={this.skipRoutre.bind(this, "/details")} key={v.schedular_id + v.show_id}>
+                  <li
+                    onClick={this.skipRoutre.bind(this, "/details/", v.schedular_id)}
+                    key={v.schedular_id + v.show_id}
+                  >
                     <img src={v.pic} alt={v.intro} />
                     <h1>
                       <span>主办</span>
@@ -179,7 +182,7 @@ class Home extends Component {
               <ul>
                 {this.props.list_rg.map((v2) => (
                   <li
-                    onClick={this.skipRoutre.bind(this, "/details")}
+                    onClick={this.skipRoutre.bind(this, "/details/", v2.schedular_id)}
                     key={v2.schedular_id + v2.show_id}
                   >
                     <img src={v2.pic} alt={v2.intro} />
@@ -216,8 +219,8 @@ class Home extends Component {
     );
   }
   // 跳转路由 函数
-  skipRoutre(path) {
-    this.props.history.push(path);
+  skipRoutre(path, id) {
+    this.props.history.push(`${path}${id}.html`);
   }
   // 轮播图实例
   swiper() {

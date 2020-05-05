@@ -37,7 +37,7 @@ import ResetPassword from "../views/my/ResetPassword";
 export const routeList = (() => {
   return [
     {
-      path: "/details",
+      path: "/details/:id.html",
       component: Details,
     },
     {

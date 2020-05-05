@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 18:56:38
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-04 23:53:57
+ * @LastEditTime: 2020-05-05 15:49:22
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -91,6 +91,7 @@ export default {
       await this.$get("/api" + url).then(({ data }) => {
         dispatch(getExclusive(data));
       });
+      console.log(this.props);
     };
   },
   // 巡回演出
@@ -99,7 +100,6 @@ export default {
       const url = `/show/tour/getList?version=6.1.1&referer=2`;
       const { data } = await this.$get("/api" + url);
       dispatch(getTour(data.list));
-      console.log(this.props);
     };
   },
   // 清空瀑布流数据
