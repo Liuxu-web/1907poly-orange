@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-27 21:59:26
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-03 22:08:05
+ * @LastEditTime: 2020-05-06 18:11:05
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
@@ -21,7 +21,13 @@ class TicketFolder extends Component {
         <div className={"TF_subject"}>
           <div className={"TF_gologin"}>
             <p>暂无电子票</p>
-            <button>登录</button>
+            <button
+              onClick={() => {
+                this.props.history.push("/login");
+              }}
+            >
+              登录
+            </button>
           </div>
         </div>
       </React.Fragment>
