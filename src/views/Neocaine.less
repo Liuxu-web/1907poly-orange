@@ -1,0 +1,154 @@
+.Neocaine-box {
+  width: 100%;
+  min-height: 100%;
+  background: #f5f5f5;
+  .adv {
+    width: 100%;
+    height: 1.9583rem;
+    background: url(../assets/img/card_market_top_bg.dd98990.png) no-repeat;
+    background-color: white;
+    background-size: 100% 100%;
+    > img {
+      width: 2.8708rem;
+      height: 1.5042rem;
+      margin: 0.1292rem 0.125rem;
+      border-radius: 0.0417rem;
+    }
+  }
+  /* vip */
+  .vip {
+    width: auto;
+    height: 1.35rem;
+    background: white;
+    padding: 0 0.125rem;
+    > h1 {
+      padding: 0.125rem 0;
+      font-size: 0.1333rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        font-size: 0.1083rem;
+        color: #6a6a6a;
+      }
+      > i {
+        color: #7d7d7d;
+      }
+    }
+
+    ul {
+      padding-top: 0.0833rem;
+      width: auto;
+      height: 0.625rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      > li {
+        display: inline-block;
+        height: 100%;
+        width: 0.5rem;
+        margin-right: 0.125rem;
+        > span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          width: 0.3542rem;
+          height: 0.3542rem;
+          border: 1px solid #d5a370;
+          border-radius: 50%;
+          i {
+            color: #e4bd96;
+            font-size: 0.15rem;
+          }
+        }
+        > p {
+          padding-top: 0.1042rem;
+          text-align: center;
+        }
+      }
+    }
+    // 谷歌浏览器 隐藏滚动条
+    ul::-webkit-scrollbar {
+      display: none;
+    }
+    // 火狐浏览器 隐藏滚动条 IE浏览器 隐藏滚动条
+    ul {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;
+    }
+  }
+  /* 卡 */
+  .card-box {
+    margin-top: 0.125rem;
+    width: auto;
+
+    padding: 0 0.125rem;
+    background: white;
+    > h1 {
+      font-size: 0.15rem;
+      font-weight: 600;
+      padding: 0.2084rem 0;
+    }
+    > div {
+      width: 100%;
+      height: 100%;
+      > h1 {
+        font-size: 0.15rem;
+        font-weight: 600;
+        padding: 0.2084rem 0;
+        > span {
+          padding-left: 0.0833rem;
+          color: #5b5b5b;
+          font-size: 0.125rem;
+          font-weight: 400;
+        }
+      }
+      .card {
+        box-sizing: border-box;
+        padding: 0.1584rem 0;
+        width: 100%;
+        display: flex;
+        .lf {
+          width: 1.3333rem;
+          height: 100%;
+          > img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0.0417rem;
+          }
+        }
+        .rg {
+          flex: 1;
+          padding-left: 0.125rem;
+          min-height: 0.8333rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          > h1 {
+            font-size: 0.1375rem;
+            font-weight: 600;
+          }
+          > h2 {
+            font-size: 0.1083rem;
+            color: #acacac;
+          }
+          > h3 {
+            font-size: 0.1375rem;
+            color: #fe6641;
+            font-weight: 600;
+            > span {
+              padding: 0.0208rem;
+              color: #ddaf84;
+              background: #fdf1e5;
+              border-radius: 0.0333rem;
+              font-size: 0.0917rem;
+              margin-left: 0.125rem;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}

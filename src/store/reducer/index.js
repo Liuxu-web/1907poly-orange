@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-27 22:56:44
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-06 12:39:41
+ * @LastEditTime: 2020-05-06 16:33:07
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import { combineReducers } from "redux";
@@ -22,6 +22,8 @@ import Details from "../reducer/Details-reducer"; // 演出详情
 
 import ShowList from "../reducer/Show-reducer"; // 演出列表
 
+import Neocaine from "../reducer/Neocaine-reducer";
+
 const rootReducer = combineReducers({
   homeList,
   cityList,
@@ -30,6 +32,7 @@ const rootReducer = combineReducers({
   theater,
   Details,
   ShowList,
+  Neocaine,
 });
 
 export default rootReducer;
