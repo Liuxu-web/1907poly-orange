@@ -5,12 +5,15 @@
   .home-header {
     width: @w;
     height: 0.25rem;
-    padding-top: 0.0625rem;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0.0625rem 0.125rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 99;
+    box-shadow: 0 0 0.0417rem #eeeeee;
     > button {
       background: transparent;
       font-size: 0.125rem;

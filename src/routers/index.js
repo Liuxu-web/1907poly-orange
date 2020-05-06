@@ -6,7 +6,13 @@ import City_component from "../components/Home/City_component/City_component";
 import Calendar_component from "../components/Home/Calendar_component/Calendar_component";
 import Search from "../views/Search";
 import Details from "../views/Details";
-
+import Amap from "../views/Amap";
+import Show from "../views/Show";
+import Neocaine from "../views/Neocaine";
+import Plus from "../views/Plus";
+import Vip from "../views/Vip";
+import GroupBooking from "../views/GroupBooking";
+import IntegralStore from "../views/IntegralStore";
 // 有底部导航
 import Home from "../views/Index/Home";
 import Theater from "../views/Index/Theater/Theater";
@@ -24,7 +30,6 @@ import MyRealName from "../views/my/MyRealName";
 import Register from "../views/my/Register";
 //忘记密码
 import ResetPassword from "../views/my/ResetPassword";
-import Amap from "../views/Amap";
 
 /*
  * @描述: 路由集中式管理 数据
@@ -38,6 +43,37 @@ import Amap from "../views/Amap";
 export const routeList = (() => {
   return [
     {
+      // 积分兑换
+      path: "/integralStore",
+      component: IntegralStore,
+    },
+    {
+      // 拼团
+      path: "/groupBooking",
+      component: GroupBooking,
+    },
+    {
+      // VIP + 会员
+      path: "/vip",
+      component: Vip,
+    },
+    {
+      // 橙plus卡
+      path: "/plus",
+      component: Plus,
+    },
+    {
+      // 购买新卡
+      path: "/neocaine",
+      component: Neocaine,
+    },
+    {
+      // 演出
+      path: "/show/:id/:url",
+      component: Show,
+    },
+    {
+      // 地图页面
       path: "/amap",
       component: Amap,
     },

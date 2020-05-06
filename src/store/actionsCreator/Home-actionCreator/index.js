@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 18:56:38
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 17:44:07
+ * @LastEditTime: 2020-05-06 13:58:06
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -65,6 +65,7 @@ export default {
     return async (dispatch) => {
       const url = `/home/index/getClassifyHome?city_id=0&abbreviation=&version=6.1.1&referer=2`;
       const { data } = await this.$get("/api" + url);
+      console.log(data);
       dispatch(getHomeAction(data));
     };
   },

@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-27 22:56:44
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 14:32:15
+ * @LastEditTime: 2020-05-06 12:39:41
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import { combineReducers } from "redux";
@@ -20,6 +20,8 @@ import SearchList from "../reducer/Search-reducer"; // 搜索演出
 
 import Details from "../reducer/Details-reducer"; // 演出详情
 
+import ShowList from "../reducer/Show-reducer"; // 演出列表
+
 const rootReducer = combineReducers({
   homeList,
   cityList,
@@ -27,6 +29,7 @@ const rootReducer = combineReducers({
   SearchList,
   theater,
   Details,
+  ShowList,
 });
 
 export default rootReducer;

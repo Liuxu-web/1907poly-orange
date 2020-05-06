@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-04-29 21:59:20
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 23:15:28
+ * @LastEditTime: 2020-05-06 13:58:14
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 
@@ -73,7 +73,12 @@ class Home extends Component {
           {/* 选项卡 */}
           <div className={"home-tab"}>
             {this.props.classify_list.map((v) => (
-              <div key={v.id}>
+              <div
+                onClick={() => {
+                  this.props.history.push(`/show/${v.category_id}/${v.id}`);
+                }}
+                key={v.id}
+              >
                 <img src={v.pic} alt={v.name} />
                 <span>{v.name}</span>
               </div>
@@ -92,7 +97,11 @@ class Home extends Component {
               <div className={"swiper-container banner-w-box "}>
                 <div className={"swiper-wrapper"}>
                   {this.props.allList.map((v) => (
-                    <div key={v.schedular_id} className={"swiper-slide"}>
+                    <div
+                      onClick={this.skipRoutre.bind(this, "/details/", v.schedular_id)}
+                      key={v.schedular_id}
+                      className={"swiper-slide"}
+                    >
                       <div className={"banner-con"}>
                         <div className={"lf"}>
                           <img src={v.pic} alt={v.city_name} />
@@ -305,41 +314,43 @@ class Home extends Component {
     });
     // 定位当前城市
     const _this = this;
-    // eslint-disable-next-line no-undef
-    AMap.plugin("AMap.Geolocation", function () {
+    if (!sessionStorage.city) {
       // eslint-disable-next-line no-undef
-      var geolocation = new AMap.Geolocation({
-        // 是否使用高精度定位，默认：true
-        enableHighAccuracy: true,
-        // 设置定位超时时间，默认：无穷大
-        timeout: 10000,
-        // 定位按钮的停靠位置的偏移量，默认：Pixel(10, 20)
+      AMap.plugin("AMap.Geolocation", function () {
         // eslint-disable-next-line no-undef
-        buttonOffset: new AMap.Pixel(10, 20),
-        //  定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
-        zoomToAccuracy: true,
-        //  定位按钮的排放位置,  RB表示右下
-        buttonPosition: "RB",
-      });
-
-      geolocation.getCurrentPosition();
-      // eslint-disable-next-line no-undef
-      AMap.event.addListener(geolocation, "complete", onComplete);
-      // eslint-disable-next-line no-undef
-      AMap.event.addListener(geolocation, "error", onError);
-
-      function onComplete({ addressComponent }) {
-        // data是具体的定位信息
-        _this.setState({
-          city: addressComponent.city,
+        var geolocation = new AMap.Geolocation({
+          // 是否使用高精度定位，默认：true
+          enableHighAccuracy: true,
+          // 设置定位超时时间，默认：无穷大
+          timeout: 10000,
+          // 定位按钮的停靠位置的偏移量，默认：Pixel(10, 20)
+          // eslint-disable-next-line no-undef
+          buttonOffset: new AMap.Pixel(10, 20),
+          //  定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+          zoomToAccuracy: true,
+          //  定位按钮的排放位置,  RB表示右下
+          buttonPosition: "RB",
         });
-        sessionStorage.city = addressComponent.city;
-      }
 
-      function onError(data) {
-        // 定位出错
-      }
-    });
+        geolocation.getCurrentPosition();
+        // eslint-disable-next-line no-undef
+        AMap.event.addListener(geolocation, "complete", onComplete);
+        // eslint-disable-next-line no-undef
+        AMap.event.addListener(geolocation, "error", onError);
+
+        function onComplete({ addressComponent }) {
+          // data是具体的定位信息
+          _this.setState({
+            city: addressComponent.city,
+          });
+          sessionStorage.city = addressComponent.city;
+        }
+
+        function onError(data) {
+          // 定位出错
+        }
+      });
+    }
   }
   // 清除 瀑布流数据
   componentWillUnmount() {

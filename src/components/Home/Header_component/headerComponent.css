@@ -1,0 +1,17 @@
+.header_component {
+  width: auto;
+  padding: 0 0.125rem;
+  background: white;
+  border-bottom: 1px solid #ececec;
+  height: 0.4042rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_component > h1 {
+  font-size: 0.15rem;
+}
+.header_component > button {
+  font-size: 0.1833rem;
+  background: transparent;
+}

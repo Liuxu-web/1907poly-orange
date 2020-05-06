@@ -1,0 +1,24 @@
+.IntegralStore-box {
+  width: 100%;
+  min-height: 100%;
+}
+.IntegralStore-box .header {
+  height: 0.3625rem;
+  width: auto;
+  padding: 0 0.125rem;
+  background: white;
+  border-bottom: 1px solid #ebebeb;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.IntegralStore-box .header > button {
+  font-size: 0.1833rem;
+  position: absolute;
+  left: 0.125rem;
+  background: transparent;
+}
+.IntegralStore-box .header > h1 {
+  font-size: 0.15rem;
+}

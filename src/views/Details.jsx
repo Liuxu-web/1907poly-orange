@@ -3,7 +3,7 @@
  * @创建者: 刘旭
  * @Date: 2020-05-04 21:41:39
  * @修改者: 刘旭
- * @LastEditTime: 2020-05-05 23:12:09
+ * @LastEditTime: 2020-05-06 14:36:34
  * @最后修改时间:  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
  */
 import React, { Component } from "react";
@@ -35,7 +35,12 @@ class Details extends Component {
             {/* 顶部 */}
             <div className={"details-header"}>
               {/* 导航 */}
-              <div onClick={this.navigation.bind(this, "/")} className={"header"}>
+              <div
+                onClick={() => {
+                  this.props.history.go(-1);
+                }}
+                className={"header"}
+              >
                 <button className={"iconfont icon-arrow-ios-back"}></button>
                 <span>演出详情</span>
                 <div>
