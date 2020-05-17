@@ -10,6 +10,7 @@
 import React, { Component } from "react";
 // 发布与订阅
 import pubsub from "pubsub-js";
+import LazyLoad from "../../components/LazyLoad.jsx";
 // 样式
 import "./Home.css";
 //引入此路径，才不会打包失败
@@ -125,8 +126,8 @@ class Home extends Component {
           {/* 广告 */}
           <div className={"home-adv"}>
             <img
-              src="https://image.juooo.com/group1/M00/03/96/rAoKmV6W4RyAdkouAAJa2-GtD74165.png"
-              alt=""
+              src='https://image.juooo.com/group1/M00/03/96/rAoKmV6W4RyAdkouAAJa2-GtD74165.png'
+              alt=''
             />
           </div>
           {/* 热门演出 */}
@@ -148,7 +149,7 @@ class Home extends Component {
                     )}
                     key={v.show_name}
                   >
-                    <img src={v.pic} alt="" />
+                    <img src={v.pic} alt='' />
                     <h1>{v.show_name}</h1>
                   </li>
                 ))}
@@ -167,9 +168,9 @@ class Home extends Component {
               {this.props.tour.map((v) => (
                 <div key={v.id} className={"home-tour"}>
                   <div className={"lf"}>
-                    <img src={v.mobile_col_img} alt="" />
+                    <img src={v.mobile_col_img} alt='' />
                   </div>
-                  <div className="rg">
+                  <div className='rg'>
                     <h1>2020年5月4日</h1>
                     <h2>{v.name}</h2>
                     <h3>
@@ -197,7 +198,15 @@ class Home extends Component {
                     onClick={this.skipRoutre.bind(this, "/details/", v.schedular_id)}
                     key={v.schedular_id + v.show_id}
                   >
-                    <img src={v.pic} alt={v.intro} />
+                    <LazyLoad
+                      state={{
+                        src: v.pic,
+                        alt: v.intro,
+                        BoxClassName: "lazyload-box", // 这是容器的类名
+                        ImgClassName: "lazyload-img", // 这是img的类名
+                      }}
+                    ></LazyLoad>
+
                     <h1>
                       <span>主办</span>
                       {v.name}
@@ -221,7 +230,14 @@ class Home extends Component {
                     onClick={this.skipRoutre.bind(this, "/details/", v2.schedular_id)}
                     key={v2.schedular_id + v2.show_id}
                   >
-                    <img src={v2.pic} alt={v2.intro} />
+                    <LazyLoad
+                      state={{
+                        src: v2.pic,
+                        alt: v2.intro,
+                        BoxClassName: "lazyload-box", // 这是容器的类名
+                        ImgClassName: "lazyload-img", // 这是img的类名
+                      }}
+                    ></LazyLoad>
                     <h1>
                       <span>主办</span>
                       {v2.name}
@@ -245,7 +261,7 @@ class Home extends Component {
           <div className={"home-adlet"}>
             <img
               src={"https://image.juooo.com/group1/M00/03/94/rAoKmV58jOmAAI84AAAp3i6IEAQ605.png"}
-              alt="开通会员"
+              alt='开通会员'
             />
           </div>
           {/* 底部填充 */}
@@ -295,7 +311,7 @@ class Home extends Component {
 
   // 组件渲染结束执行钩子
   componentDidMount() {
-    document.querySelector(".home-box").scrollIntoView(true); //为ture返回顶部，false为底部
+    // document.querySelector(".home-box").scrollIntoView(true); //为ture返回顶部，false为底部
     // 获取巡回演出
     this.props.CHANGE_TOUR.apply(this);
     // 获取热门演出列表

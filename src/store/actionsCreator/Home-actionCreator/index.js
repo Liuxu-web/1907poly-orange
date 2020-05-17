@@ -62,44 +62,47 @@ function changeExclusive() {
 export default {
   // 首页数据 底部导航 , 轮播图 选项卡
   gethome() {
-    return async (dispatch) => {
+    return (dispatch) => {
       const url = `/home/index/getClassifyHome?city_id=0&abbreviation=&version=6.1.1&referer=2`;
-      const { data } = await this.$get("/api" + url);
-      console.log(data);
-      dispatch(getHomeAction(data));
+      this.$get("/api" + url).then(({ data }) => {
+        dispatch(getHomeAction(data));
+      });
     };
   },
   // 获取会员折扣轮播图信息
   CHANGE_ALL_LIST() {
-    return async (dispath) => {
+    return (dispath) => {
       const url = `/vip/index/getVipHomeSchedular?city_id=0&version=6.1.1&referer=2`;
-      const { data } = await this.$get("/api" + url);
-      dispath(getAllLsit(data.allList));
+      this.$get("/api" + url).then(({ data }) => {
+        dispath(getAllLsit(data.allList));
+      });
     };
   },
   // 热门演出
   CHANGE_HOT_LIST() {
-    return async (dispatch) => {
+    return (dispatch) => {
       const url = `/home/index/getHotsRecommendList?city_id=0&version=6.1.1&referer=2`;
-      const { data } = await this.$get("/api" + url);
-      dispatch(getHotList(data.hots_show_list));
+      this.$get("/api" + url).then(({ data }) => {
+        dispatch(getHotList(data.hots_show_list));
+      });
     };
   },
   // 获取瀑布流数据
   CHANGE_EXCLUSIVE(page = 1) {
-    return async (dispatch) => {
+    return (dispatch) => {
       const url = `/Show/Search/getShowList?city_id=0&category=&keywords=&venue_id=&start_time=&page=${page}&referer_type=index&version=6.1.1&referer=2`;
-      await this.$get("/api" + url).then(({ data }) => {
+      this.$get("/api" + url).then(({ data }) => {
         dispatch(getExclusive(data));
       });
     };
   },
   // 巡回演出
   CHANGE_TOUR() {
-    return async (dispatch) => {
+    return (dispatch) => {
       const url = `/show/tour/getList?version=6.1.1&referer=2`;
-      const { data } = await this.$get("/api" + url);
-      dispatch(getTour(data.list));
+      this.$get("/api" + url).then(({ data }) => {
+        dispatch(getTour(data.list));
+      });
     };
   },
   // 清空瀑布流数据

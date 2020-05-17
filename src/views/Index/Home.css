@@ -316,9 +316,14 @@
   border-radius: 0.0625rem;
   box-shadow: 0 0 0.0417rem #eeeeee;
 }
-.home-box .home-hot .home-list > ul > li > img {
+.home-box .home-hot .home-list > ul > li .lazyload-box {
   width: 100%;
   height: 1.925rem;
+}
+.home-box .home-hot .home-list > ul > li .lazyload-box > img {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
 }
 .home-box .home-hot .home-list > ul > li > h1 {
   margin: 0.0667rem 0;
